@@ -6,7 +6,7 @@
   opacity: 0.9;
   background-size: cover;
   align-items: center;
-  border-bottom: 1px solid #0002;
+  border-bottom: 1px solid #3333331b;
 }
 
 .banner .banner-item-container {
@@ -26,7 +26,7 @@
   position: relative;
   display: inline-block;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 15px;
 }
 
 .banner-item .container {
@@ -39,16 +39,16 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 10px;
+  padding: 1px;
   border: 1px solid#0002;
-  border-radius: 3px;
+  border-radius: 15px;
 }
 .banner-item .category-image-container {
   min-width: 90%;
   min-height: 70%;
   overflow: hidden;
   border: 1px solid#0002;
-  border-radius: 3px;
+  border-radius: 15px;
 }
 
 .banner-item .category-image-container img {

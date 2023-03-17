@@ -1,0 +1,33 @@
+
+
+DESIGN-FRIST TOP DOWN APPROACH: --/ 
+
+    1.) CSS/HTML (schema and design):
+    c - meta tags including favicon stolen from searchspring headers
+    c - navbar including all icons and links
+    c - ads and banner image
+    x - filter sort and search bar
+    x - setting product results and pagination divs for javascript
+    x - add pagination buttons and design 
+
+    2.) JAVASCRIPT SEARCH (functionality):
+    x - lay down foundation with class for accessing different api futures to make it easy on yourself
+    x - test functionality for filter sorting and results in JSON first
+    x - start implementing search functionality with mobile modal
+    x - load search items and load search data into product page
+    x - start implementing already functional search sort and filtering on product page 
+    x - DONT FORGET TO CHECK FOR MSRP YOU ALMOST DID!!!
+
+    3.) HTML/CSS SEARCH (design):
+    x - start to design and style product results
+    x - start to design modal for modernity and ease of use
+    x - start to add MSRP zaps to found products that fit
+    x - work work on cart modal
+
+    4.) JAVASCRIPT CART (functionality):
+    x - have a global state simulating REST so you can remember saved items
+    x - add items to cart modal and plus or minus cart functionality
+    x - YOUR ALMOST THERE
+
+    5.) SUPERVISE AND REFINE(any ideas or improvements):
+    # to be determined
