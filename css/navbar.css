@@ -51,15 +51,9 @@
 .search-and-cart-button:hover {
   cursor: pointer;
 }
-.search-and-cart .cart-amount-container {
+.search-and-cart #cart-amount-container {
   position: absolute;
   z-index: 3;
-  top: 0;
-  left: 0;
-}
-
-.search-and-cart .cart-amount-container .cart-amount {
-  position: absolute;
-  top: 0;
+  top: 10px;
   left: 0;
 }
