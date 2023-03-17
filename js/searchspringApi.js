@@ -7,7 +7,7 @@ class SearchSpringAPI {
   //process but it can change this is also the reason why made it an
   //preset constructor parameter and not a method parameter
 
-  constructor(siteId = "scmq7n", resultsFormat = "json") {
+  constructor(siteId = "scmq7n", resultsFormat = "native") {
     this.siteId = siteId;
     this.resultsFormat = resultsFormat;
     this.baseUrl = `https://${siteId}.a.searchspring.io/api/search/search.json`;
@@ -34,6 +34,9 @@ class SearchSpringAPI {
 
   static set baseUrl(url) {
     this.baseUrl = url;
+  }
+  static set resultsFormat(format) {
+    this.resultsFormat = format;
   }
 
   //making the REST url creation seamless and easy for mulitple different request
