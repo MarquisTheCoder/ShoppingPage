@@ -1,0 +1,15 @@
+header {
+  overflow-x: hidden;
+}
+
+/* mobile devices -> 320 - 480px*/
+@media screen and (max-width: 480px) {
+}
+/* tablets -> 481 - 768px*/
+@media screen and (max-width: 768px) {
+}
+/* small computer displays -> 769 - 1024px */
+@media screen and (max-width: 768px) {
+}
+/* average computer displays -> 1025 - 1200px */
+/* large computer displays -> 1201px >= */

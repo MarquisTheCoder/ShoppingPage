@@ -1,0 +1,49 @@
+/* navbar global screen css */
+.main-navigation {
+  background-color: white;
+  width: 100vw;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #3333331b;
+  box-shadow: 0px 15px 8px -15px #0003;
+}
+.main-navigation .main-menu {
+  display: none;
+}
+.main-navigation .main-menu a {
+  color: black;
+  padding: 8px;
+  display: block;
+  font-size: 1rem;
+}
+
+/* hamburger menu code */
+.main-navigation a.icon {
+  background: transparent;
+  color: black;
+}
+
+.main-navigation #search-spring-logo {
+  /* filter: invert(67%) sepia(71%) saturate(7495%) hue-rotate(360deg)
+    brightness(94%) contrast(95%); */
+  width: 150px;
+}
+.main-navigation .search-and-cart {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.main-navigation .search-and-cart .navigation-icon {
+  width: 20px;
+  height: 20px;
+}
+.main-navigation .search-and-cart .search-and-cart-button {
+  background-color: transparent;
+  border: none;
+}
+.search-and-cart-button:hover {
+  cursor: pointer;
+}

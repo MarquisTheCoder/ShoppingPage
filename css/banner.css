@@ -1,0 +1,28 @@
+.banner {
+  display: flex;
+  gap: 20px;
+  height: calc(100vh / 3);
+  width: 100vw;
+  background-color: #f9f6eeed;
+  padding: 10px;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  align-items: center;
+  border-bottom: 1px solid #0002;
+}
+
+.banner #banner-image {
+  z-index: -1;
+  position: absolute;
+  height: calc(100vh / 2);
+  width: calc(90vw * 3);
+}
+
+.banner #banner-slogan {
+  color: black;
+}
+.banner .banner-item {
+  height: calc(80vh / 3);
+  width: calc(200vw / 4);
+  background-color: #888b;
+}

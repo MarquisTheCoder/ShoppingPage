@@ -9,29 +9,102 @@
       name="description"
       content="number on clothing store for string fashion around"
     />
+
     <!-- using the searchspring favicon I found by viewing network traffic in devtools -->
     <link
       rel="icon"
       type="image/x-icon"
       href="http://try.searchspring.com/favicon.ico"
     />
-    <!-- segmenting my blocks into their own relative css files so later down the line
-         all css for a given code block is easier to edit, expand, and reference later down
-         the line. It's unconventional but I've found it useful-->
+
+    <!-- hotloaded css -->
+    <!-- load an icon library to show a hamburger menu (bars) on small screens -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- external css -->
     <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/banner.css" />
+
+    <!-- segmenting css by element for ease if targeting and expansion later -->
 
     <title>Searchspring - #1 one clothing store for spring outfits</title>
   </head>
   <body>
     <div class="root">
       <header>
-        <nav class="main-navigation"></nav>
+        <nav class="main-navigation">
+          <!-- seperating each section into individual divs so they are 
+            easy to maintain with justify content space-between -->
+
+          <!-- main naviagtion menu -->
+          <div class="main-menu" id="main-menu">
+            <a class="menu-item" href="">Dresses</a>
+            <a class="menu-item" href="">Tops</a>
+            <a class="menu-item" href="">Shoes</a>
+            <a class="menu-item" href="">Accessories</a>
+            <a class="menu-item" href="">Sale</a>
+          </div>
+
+          <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+          <a
+            href="javascript:void(0);"
+            class="icon"
+            onclick="hamburgerDisplay()"
+          >
+            <i class="fa fa-bars"></i>
+          </a>
+
+          <div class="searchspring">
+            <a href="./index.html">
+              <img
+                id="search-spring-logo"
+                src="imgs/header/search-spring.svg"
+                alt="search spring main logo"
+              />
+            </a>
+          </div>
+          <div class="search-and-cart">
+            <button class="search-and-cart-button" id="search">
+              <img
+                class="navigation-icon"
+                src="imgs/header/search-icon.svg"
+                alt="search icon"
+              />
+            </button>
+
+            <button class="search-and-cart-button" id="cart">
+              <img
+                class="navigation-icon"
+                src="imgs/header/cart-icon.svg"
+                alt="cart icon"
+              />
+            </button>
+          </div>
+        </nav>
+
+        <section class="banner">
+          <div class="banner-item"></div>
+          <div class="banner-item"></div>
+          <div class="banner-item"></div>
+          <div class="banner-item"></div>
+          <div class="banner-item"></div>
+        </section>
       </header>
-      <section></section>
-      <div></div>
+
+      <main>
+        <section class="product-page"></section>
+      </main>
+
       <footer></footer>
     </div>
+
+    <!-- external javascript -->
     <script src="js/main.js"></script>
+    <script src="js/mobile-display.js"></script>
   </body>
 </html>

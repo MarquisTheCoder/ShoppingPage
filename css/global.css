@@ -3,8 +3,12 @@
   margin: 0;
   box-sizing: border-box;
 }
-
 html {
-  padding: 0;
-  margin: 0;
+  /* setting the background color as black so I can focus on each element I'm working on */
+  /* background-color: black; */
+}
+.root {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
 }
