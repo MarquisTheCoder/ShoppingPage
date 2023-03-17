@@ -10,9 +10,11 @@
   border-bottom: 1px solid #3333331b;
   box-shadow: 0px 15px 8px -15px #0003;
 }
+
 .main-navigation .main-menu {
   display: none;
 }
+
 .main-navigation .main-menu a {
   color: black;
   padding: 8px;
