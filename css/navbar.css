@@ -40,6 +40,9 @@
   width: 20px;
   height: 20px;
 }
+.main-navigation .search-and-cart .navigation-icon:hover {
+  cursor: pointer;
+}
 .main-navigation .search-and-cart .search-and-cart-button {
   background-color: transparent;
   border: none;
