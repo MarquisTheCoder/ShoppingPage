@@ -1,0 +1,54 @@
+.ad {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: calc(90vh / 12);
+  background: url("../imgs/header/banner/flower.jpg");
+  background-position: bottom 60% left 0;
+  background-size: 108%;
+  overflow: hidden;
+  align-items: center;
+}
+
+.ad > .ad-header {
+  padding: 10px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.ad > .ad-header .ad-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.ad > .ad-header .ad-header-info span {
+  font-weight: bolder;
+  color: white;
+  background-color: #0d4d4ddd;
+  height: 30px;
+  width: 60px;
+  padding: 3px 6px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.8rem;
+}
+.ad > .ad-header h4 {
+  color: #d2386c;
+  font-size: 1.3rem;
+  font-weight: bolder;
+}
+.ad > .ad-header h5 {
+  color: #ff9a00;
+  font-size: smaller;
+}
+
+.ad > .ad-header a {
+  color: white;
+  background-color: #d2386c;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 0.6rem;
+}

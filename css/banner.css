@@ -2,7 +2,9 @@
   display: flex;
   height: calc(100vh / 3);
   width: 100vw;
-  background: url("../imgs/header/banner/blur.jpg");
+  background: url("../imgs/header/banner/pink-yellow.png");
+  opacity: 0.9;
+  background-size: cover;
   align-items: center;
   border-bottom: 1px solid #0002;
 }
