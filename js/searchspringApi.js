@@ -1,3 +1,7 @@
+//The purpose of this file and class it to make making the search functionality as seamless
+//as humanly possible and easy on myself. Setting the building blocks now will give me some room
+//for expected mistakes and modification/expansion.
+
 class SearchSpringAPI {
   //because the site id can be changed in future implementations
   //AND I will be using only one I set it as a preset parameter
@@ -51,4 +55,21 @@ class SearchSpringAPI {
     url += filter === "" ? "" : `filter=${filter}`;
     return url;
   }
+
+  /*
+ CODE EXAMPLE USING FOR MODERN FETCH SYNTAX
+
+ const checkUserHosting = async (hostEmail, callback) => {
+ let hostEmailData  = await fetch(`http://localhost:3001/activities/${hostEmail}`)
+ //use string literals
+ let hostEmailJson = await hostEmailData.json();
+ return hostEmailJson;
+}
+ */
+
+  static fetchData = async () => {
+    let response = await fetch();
+  };
+
+  static search() {}
 }
