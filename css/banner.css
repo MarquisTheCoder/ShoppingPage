@@ -2,7 +2,7 @@
   display: flex;
   height: calc(100vh / 3);
   width: 100vw;
-  background-color: #f9f6eeed;
+  background: url("../imgs/header/banner/blur.jpg");
   align-items: center;
   border-bottom: 1px solid #0002;
 }
@@ -42,17 +42,15 @@
   border-radius: 3px;
 }
 .banner-item .category-image-container {
-  display: flex;
   min-width: 90%;
   min-height: 70%;
   overflow: hidden;
   border: 1px solid#0002;
   border-radius: 3px;
-  justify-content: center;
 }
 
 .banner-item .category-image-container img {
-  max-height: 150%;
+  max-height: 178%;
 }
 
 .banner-item .category-name-container {

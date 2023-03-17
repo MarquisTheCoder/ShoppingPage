@@ -45,8 +45,21 @@
 }
 .main-navigation .search-and-cart .search-and-cart-button {
   background-color: transparent;
+  position: relative;
   border: none;
 }
 .search-and-cart-button:hover {
   cursor: pointer;
+}
+.search-and-cart .cart-amount-container {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+}
+
+.search-and-cart .cart-amount-container .cart-amount {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
