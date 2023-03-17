@@ -15,6 +15,8 @@ class SearchSpringAPI {
 
   //static properties
   static #resultsPerPageDefault = 24;
+  //making the options parameter static because I cant see me utilizing POST, DELETE, OR UPDATES
+  //in this specific API use case
   static #options = { method: "GET", headers: { accept: "application/json" } };
 
   // getters
@@ -35,8 +37,15 @@ class SearchSpringAPI {
   }
 
   //making the REST url creation seamless and easy for mulitple different request
-  static buildUrl(query, page, resultsPerPage = this.#resultsPerPageDefault) {
+  static buildUrl(
+    query,
+    page = 1,
+    resultsPerPage = this.#resultsPerPageDefault,
+    filter = ""
+  ) {
     let url = `${this.baseUrl}?resultsFormat=${this.resultsFormat}&redirectResponse=minimal&page=${page}&resultsPerPage=${resultsPerPage}&q=${query}`;
+    //if filter string remains empty do not add filter
+    url += filter === "" ? "" : `filter=${filter}`;
     return url;
   }
 }
