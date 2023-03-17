@@ -9,8 +9,16 @@ class SearchSpringAPI {
   constructor(siteId = "scmq7n", resultsFormat = "native") {
     this.siteId = siteId;
     this.resultsFormat = "native";
+    this.baseUrl = `https://${siteId}.a.searchspring.io/api/search/search.json`;
   }
-  static #baseUrl = "http://api.searchspring.net/api/";
+
+  get siteId() {
+    return this.siteId;
+  }
+
+  get baseUrl() {
+    return this.baseUrl;
+  }
 
   //making the REST url creation seamless and easy for mulitple different request
   static buildUrl() {
