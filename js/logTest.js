@@ -7,5 +7,5 @@ window.onload = () => {
 
   //testing functions
   console.log(api.buildUrl("shoes", 1));
-  console.log(api.search("shoes", 1));
+  console.log(api.fetchData("shoes", 1));
 };

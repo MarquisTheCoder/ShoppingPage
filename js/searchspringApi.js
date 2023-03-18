@@ -47,7 +47,8 @@ class SearchSpringAPI {
 }
  */
 
-  fetchData = async (
+  //using this function to
+  search = async (
     query,
     page = 1,
     resultsPerPage = this.resultsPerPageDefault,
@@ -58,17 +59,7 @@ class SearchSpringAPI {
       SearchSpringAPI.options
     );
     let json = response.json();
-    return json;
-  };
-
-  search = async (
-    query,
-    page = 1,
-    resultsPerPage = SearchSpringAPI.resultsPerPageDefault,
-    filter = ""
-  ) => {
-    let json = await this.fetchData(query, page, resultsPerPage, filter);
-    let results = json.results;
+    let results = json;
     return results;
   };
 }
