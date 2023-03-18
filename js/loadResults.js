@@ -5,15 +5,22 @@ window.onload = () => {
     msrpElement: document.getElementById("main-msrp"),
 
     //result html manipulation
-    resetResults: () => {
+    resetResults: function () {
       this.element.innerHTML = "";
     },
-    addResult: (htmlElement) => {
-      this.element.append(htmlElement);
+    addResult: function (htmlElement) {
+      this.element.innerHTML += htmlElement;
     },
 
-    htmlConversion: (result) => {},
-    htmlMSRPConversion: (result) => {},
+    htmlConversion: function (result, sale = 0) {
+      return html` <div class="product" data-id="${result.id}">
+        <div class="product-image-container">
+          ${this.msrpChecker(result) ? `<img src=""/>` : ``}
+          <img class="product-image" src="${result.imageUrl}" />
+        </div>
+        <div class="product-information"></div>
+      </div>`;
+    },
 
     //data extraction methods
 
@@ -46,4 +53,16 @@ window.onload = () => {
   };
 
   const search = new SearchSpringAPI();
+  const initialResults = search.search(1, "");
+  search
+    .search(1, "")
+    .then((response) => {
+      console.log(response.results[0]);
+      return response.results;
+    })
+    .then((resultsJson) => {
+      resultsJson.forEach((result) => {
+        results.addResult(results.htmlConversion(result));
+      });
+    });
 };
