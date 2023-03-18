@@ -62,23 +62,24 @@
 
 .ad-footer {
   width: 100vw;
-  height: 150px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 5px;
-  background-color: #63ddd477;
+  background-color: #9ff4;
 }
 
 .ad-footer > .ad-footer-container {
   width: 100%;
-  height: 100%;
+  height: 100px;
   display: flex;
+  align-items: center;
   gap: 5px;
 }
 .ad-footer-container .ad-footer-item {
-  height: 100%;
+  height: 90px;
   width: 25%;
   border-radius: 10px;
-  background-color: #a601a5de;
+  background-color: #000d;
 }
