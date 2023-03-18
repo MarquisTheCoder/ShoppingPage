@@ -14,43 +14,23 @@ class SearchSpringAPI {
   constructor(siteId = "scmq7n", resultsFormat = "native") {
     this.siteId = siteId;
     this.resultsFormat = resultsFormat;
-    this.baseUrl = `https://${siteId}.a.searchspring.io/api/search/search.json`;
+    this.baseUrl = `https://api.searchspring.io/api/search/search.json`;
   }
 
   //static properties
-  static #resultsPerPageDefault = 24;
+  static resultsPerPageDefault = 24;
   //making the options parameter static because I cant see me utilizing POST, DELETE, OR UPDATES
   //in this specific API use case
-  static #options = { method: "GET", headers: { accept: "application/json" } };
-
-  // getters
-  static get siteId() {
-    return this.siteId;
-  }
-
-  static get baseUrl() {
-    return this.baseUrl;
-  }
-  // setters
-  static set siteId(id) {
-    this.siteId = id;
-  }
-
-  static set baseUrl(url) {
-    this.baseUrl = url;
-  }
-  static set resultsFormat(format) {
-    this.resultsFormat = format;
-  }
+  static options = { method: "GET", headers: { accept: "application/json" } };
 
   //making the REST url creation seamless and easy for mulitple different request
-  static buildUrl(
+  buildUrl(
     query,
     page = 1,
-    resultsPerPage = this.#resultsPerPageDefault,
+    resultsPerPage = SearchSpringAPI.resultsPerPageDefault,
     filter = ""
   ) {
-    let url = `${this.baseUrl}?resultsFormat=${this.resultsFormat}&redirectResponse=minimal&page=${page}&resultsPerPage=${resultsPerPage}&q=${query}`;
+    let url = `${this.baseUrl}?resultsFormat=${this.resultsFormat}&redirectResponse=minimal&page=${page}&resultsPerPage=${resultsPerPage}&q=${query}&siteId=${this.siteId}`;
     //if filter string remains empty do not add filter
     url += filter === "" ? "" : `filter=${filter}`;
     return url;
@@ -67,9 +47,28 @@ class SearchSpringAPI {
 }
  */
 
-  static fetchData = async () => {
-    let response = await fetch();
+  fetchData = async (
+    query,
+    page = 1,
+    resultsPerPage = this.resultsPerPageDefault,
+    filter = ""
+  ) => {
+    let response = await fetch(
+      this.buildUrl(query, page, resultsPerPage, filter),
+      SearchSpringAPI.options
+    );
+    let json = response.json();
+    return json;
   };
 
-  static search() {}
+  search = async (
+    query,
+    page = 1,
+    resultsPerPage = SearchSpringAPI.resultsPerPageDefault,
+    filter = ""
+  ) => {
+    let json = await this.fetchData(query, page, resultsPerPage, filter);
+    let results = json.results;
+    return results;
+  };
 }
