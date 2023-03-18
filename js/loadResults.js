@@ -44,4 +44,6 @@ window.onload = () => {
       return result.description;
     },
   };
+
+  const search = new SearchSpringAPI();
 };
