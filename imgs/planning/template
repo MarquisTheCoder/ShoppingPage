@@ -11,7 +11,7 @@ DESIGN-FRIST TOP DOWN APPROACH: --/
     x - add pagination buttons and design 
 
     2.) JAVASCRIPT SEARCH (functionality):
-    x - lay down foundation with class for accessing different api futures to make it easy on yourself
+    c - lay down foundation with class for accessing different api futures to make it easy on yourself
     x - test functionality for filter sorting and results in JSON first
     x - start implementing search functionality with mobile modal
     x - load search items and load search data into product page
