@@ -3,14 +3,14 @@
 //function to load results of any query and page
 //this will be very useful when utilizing our global state
 //manager later
-function loadResults(page, query){
+function loadResults(query, page){
   const spring = new SearchSpringAPI();
   const resultsManager = new ResultsManager();
 
   resultsManager.resetResults();
 
   //for init this will be 1, ""
-  spring.search(page, query)
+  spring.search(query, page=page)
     .then((response) => {
       console.log(response.results[0]);
       return response.results; 
@@ -24,5 +24,5 @@ function loadResults(page, query){
 }
 
 window.onload = () => {
-  loadResults(1, "");
+  loadResults("", page=1);
 };

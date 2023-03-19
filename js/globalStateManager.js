@@ -1,6 +1,8 @@
 
-let state = {
+const spring = SearchSpringAPI();
 
+let state = {
+    currentUrl: spring.buildUrl("", page=1)
 }
 
 class GlobalStateManager{
