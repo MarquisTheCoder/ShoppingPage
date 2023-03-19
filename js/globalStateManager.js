@@ -5,8 +5,9 @@ const spring = new SearchSpringAPI();
 class GlobalStateManager{
 
      static state = {
-            currentUrl: spring.buildUrl("", page=1)
+            currentSearch: spring.buildUrl("", page=1)
         }
+
     //using an intial json template to add all object keys 
     //and values and local store variables. provides me with a quick method
     //to start a new global state from scratch or potentially use this class elsewhere
