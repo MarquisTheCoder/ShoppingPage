@@ -1,5 +1,5 @@
 
-const spring = SearchSpringAPI();
+const spring = new SearchSpringAPI();
 
 let state = {
     currentUrl: spring.buildUrl("", page=1)

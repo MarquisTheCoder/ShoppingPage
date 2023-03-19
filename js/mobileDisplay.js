@@ -13,15 +13,14 @@ function searchAndCartDisplay(){
   const overlay = document.querySelector("#search-page-modal .overlay");
   const content = document.querySelector("#search-page-modal .content");
 
-  const isMobile = window.matchMedia("(min-width: 768");
+  const isMobile = window.matchMedia("(max-width: 768px");
 
   if(isMobile.matches){
-    content.style.width = "30vw";
+    console.log(`match: ${isMobile.matches}`)
+    content.style.width = "80vw";
   }else{
     content.style.width = "35vw";
   }
   modal.style.width = "100vw";
   overlay.style["background-color"] = "#0009"; 
-
-
 }
