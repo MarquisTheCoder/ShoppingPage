@@ -1,9 +1,30 @@
+
+/* on expansion make 100vw */
 #search-page-modal {
   position: fixed;
   top: 0;
-  left: 0;
-  z-index: 5;
+  right: 0;
+  z-index: 4;
+  width: 0;
+  height: 100vh; 
+  overflow: hidden;
+  transition: 0ms; 
+}
+
+/* background color #0009 on expansion */
+#search-page-modal .overlay{
   width: 100vw;
-  height: 100vh;
-  background-color: white;
+  height: 100%;
+  background-color: #0000;
+}
+
+/* on expansion make 300px */
+#search-page-modal .content{
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: 500ms!important;
+  background-color: #EDEDED;
 }

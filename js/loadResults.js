@@ -7,6 +7,8 @@ function loadResults(page, query){
   const spring = new SearchSpringAPI();
   const resultsManager = new ResultsManager();
 
+  resultsManager.resetResults();
+
   //for init this will be 1, ""
   spring.search(page, query)
     .then((response) => {

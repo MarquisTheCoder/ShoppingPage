@@ -7,3 +7,21 @@ function hamburgerDisplay() {
     x.style.display = "block";
   }
 }
+
+function searchAndCartDisplay(){
+  const modal = document.getElementById("search-page-modal");
+  const overlay = document.querySelector("#search-page-modal .overlay");
+  const content = document.querySelector("#search-page-modal .content");
+
+  const isMobile = window.matchMedia("(min-width: 768");
+
+  if(isMobile.matches){
+    content.style.width = "30vw";
+  }else{
+    content.style.width = "35vw";
+  }
+  modal.style.width = "100vw";
+  overlay.style["background-color"] = "#0009"; 
+
+
+}

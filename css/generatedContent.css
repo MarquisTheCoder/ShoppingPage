@@ -35,6 +35,19 @@
   padding: 5px 10px 5px 10px;
   font-size: 0.6rem;
 }
+
+.product-information{
+  padding: 8px 5px 0 5px;;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.product-information .add-to-cart{
+  width: 20px;
+}
+.product-information .add-to-cart:hover{
+  cursor: pointer;
+}
 .product-prices {
   display: flex;
   gap: 5px;

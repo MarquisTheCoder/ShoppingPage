@@ -39,7 +39,7 @@ class ResultsManager{
             <p class="product-price">$${result.price}</p>
             <p class="product-msrp">$${result.msrp}</p>
           </div>
-          
+          <img class="add-to-cart" src="imgs/main/add-to-cart.svg"/> 
         </div>
       </div>`;
     };

@@ -69,7 +69,7 @@
   align-items: center;
   justify-content: center;
   padding: 5px;
-  background-color: #9ff4;
+  background-color: #28d2d242;
 }
 
 .ad-footer > .ad-footer-container {
@@ -80,8 +80,8 @@
   gap: 5px;
 }
 .ad-footer-container .ad-footer-item {
-  height: 90px;
+  height: 50px;
   width: 25%;
   border-radius: 10px;
-  background-color: #000d;
+  background: linear-gradient(to bottom, #9D147A, #E85B44);
 }

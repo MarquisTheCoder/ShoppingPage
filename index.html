@@ -64,6 +64,7 @@
             <i class="fa fa-bars"></i>
           </a>
 
+          
           <div class="searchspring">
             <a href="./index.html">
               <img
@@ -79,6 +80,7 @@
                 class="navigation-icon"
                 src="imgs/header/search-icon.svg"
                 alt="search icon"
+                onclick="searchAndCartDisplay()"
               />
             </button>
 
@@ -93,19 +95,17 @@
               </div>
             </button>
             
-            <section class="hidden" id="search-page-modal">
-              <nav class="search-header">
-                <div class="back-button"></div>
-                <div>
-                  <input type="text" />
-                </div>
-                <div>
-                  <button class="search-button"></button>
-                </div>
-              </nav>
+            <section id="search-page-modal">
+              <div class="overlay"> 
+                  <div class="content">
+
+                  </div>
+              </div>
             </section>
+
           </div>
         </nav>
+
         <section class="ad">
           <div class="ad-header">
             <div class="ad-header-info">
