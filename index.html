@@ -37,7 +37,22 @@
     <!-- segmenting css by element for ease if targeting and expansion later -->
 
     <title>Searchspring - #1 one clothing store for spring outfits</title>
+  <script>
+      window.onscroll = function () { 
+      const navbar = document.getElementsByClassName('main-navigation')[0];
+      console.log(document.documentElement.scrollTop)
+      console.log(navbar.style.height)
 
+    if (document.documentElement.scrollTop >= 5) {
+        navbar.classList.add("scrolled"); 
+    } 
+    else {
+        navbar.classList.remove("scrolled");
+    }
+
+};
+    </script>
+   
   </head>
   <body>
     <div class="root">
@@ -113,7 +128,7 @@
               <h5><span>-20%</span> off select items</h3>
             </div>
             <div>
-              <a href="#main-results">Shop now</a>
+              <a href="#product-page-link">Shop now</a>
             </div>
           </div> 
         </section>
@@ -235,5 +250,6 @@
     <script src="js/searchSpringApi.js"></script>
     <script src="js/loadResults.js"></script>
     <!-- <script src="js/logTest.js"></script> -->
+  
   </body>
 </html>

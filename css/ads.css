@@ -64,12 +64,11 @@
 
 .ad-footer {
   width: 100vw;
-  height: 100px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5px;
-  background-color: #28d2d242;
+  padding: 2px;
 }
 
 .ad-footer > .ad-footer-container {

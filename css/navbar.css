@@ -1,5 +1,7 @@
 /* navbar global screen css */
 .main-navigation {
+  z-index: 6;
+
   background-color: white;
   width: 100vw;
   height: 60px;
@@ -8,7 +10,9 @@
   align-items: center;
   padding: 10px;
   border-bottom: 1px solid #3333331b;
+
   box-shadow: 0px 15px 8px -15px #0003;
+  transition: top 5s linear;
 }
 
 .main-navigation .main-menu {
@@ -69,4 +73,10 @@
 .search-and-cart #cart-amount-container #cart-amount {
   color: white;
   font-size: 0.5rem;
+}
+
+.scrolled{
+  position: fixed;
+  top: 0;
+  left: 0;
 }
