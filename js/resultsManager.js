@@ -16,6 +16,7 @@ class ResultsManager{
     toHtml (result, sale = 0) {
       let price = result.price;
       let msrp = result.msrp;
+      let percentage  =  (100 - ((price / msrp) * 100)).toFixed(0);
       return ` <div
         class="product"
         data-id="${result.id}"
@@ -23,15 +24,14 @@ class ResultsManager{
       >
         <div class="product-image-container">
           ${
-            this.msrpChecker(result)
-              ? ` <img class="product-sale-icon" src="imgs/main/sale.png" />
-                  <span class="price-difference" data-msrp="${
-                    result.msrp
-                  }" data-price="${result.price}">-${
-                  (100 - ((price / msrp) * 100)).toFixed(0)
-                }%</span>`
-              : ``
+            this.msrpChecker(result)  
+              ? `<span class="price-difference" data-msrp="${result.msrp}" data-price="${result.price}">-${percentage}%</span>`
+              : ""
           }
+          ${
+            (this.msrpChecker(result) && percentage >= 20) ?
+            `<img class="product-sale-icon" src="imgs/main/sale.png" />` : ""
+           }
           <img class="product-image" src="${result.imageUrl}" />
         </div>
         <div class="product-information">

@@ -30,10 +30,11 @@
   position: absolute;
   top: 5%;
   left: 0;
-  background-color: black;
+  background-color: #FD9D0F;
   color: white;
+  font-weight: bolder;
   padding: 5px 10px 5px 10px;
-  font-size: 0.6rem;
+  font-size: 0.7rem;
 }
 
 .product-information{
