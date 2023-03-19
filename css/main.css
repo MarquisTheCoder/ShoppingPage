@@ -1,11 +1,24 @@
 .product-page {
   width: 100vw;
-  height: 80vh;
-  background-color: lightgrey;
-  padding: 10px;
+  height: 110vh;
+  padding: 5px 5px 0 5px;
+}
+#main-results {
+  width: 100;
+  height: 100%;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  scrollbar-width: none;
 }
 
 .results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none;
 }
