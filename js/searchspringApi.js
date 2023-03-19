@@ -2,6 +2,7 @@
 //as humanly possible and easy on myself. Setting the building blocks now will give me some room
 //for expected mistakes and modification/expansion.
 
+//changing name
 class SearchSpringAPI {
   //because the site id can be changed in future implementations
   //AND I will be using only one I set it as a preset parameter
