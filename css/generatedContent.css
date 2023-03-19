@@ -35,6 +35,18 @@
   padding: 5px 10px 5px 10px;
   font-size: 0.6rem;
 }
-.product-price {
-  
+.product-prices {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.product-prices .product-price{
+  font-weight: bolder;
+  color: #E5231Fdd;
+}
+.product-prices .product-msrp{
+  font-weight: lighter;
+  font-size: 0.88rem;
+  text-decoration: line-through;
+  opacity: 0.6;
 }

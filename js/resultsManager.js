@@ -35,7 +35,11 @@ class ResultsManager{
           <img class="product-image" src="${result.imageUrl}" />
         </div>
         <div class="product-information">
-          <p class="product-price">$${result.price}</p>
+          <div class="product-prices">
+            <p class="product-price">$${result.price}</p>
+            <p class="product-msrp">$${result.msrp}</p>
+          </div>
+          
         </div>
       </div>`;
     };
