@@ -15,21 +15,27 @@ class GlobalStateManager{
         this.template = template;
         this.init(template); 
     }
+
     init(template){
         for(const [key, value] of Object.entries(state)){
             this.save(key, value);
         }
     }
+
     save(key, value){
         localStorage.setItem(key, value);
     }
+
     retrieve(key){
         localStorage.getItem(key);
     }
+
     delete(key){
         localStorage.removeItem(key);
     }
+
     clear(){
         localStorage.clear();
     }
+
 }
