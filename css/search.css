@@ -1,6 +1,6 @@
 
 /* on expansion make 100vw */
-#search-page-modal {
+#search-and-cart-modal {
   position: fixed;
   top: 0;
   right: 0;
@@ -12,19 +12,71 @@
 }
 
 /* background color #0009 on expansion */
-#search-page-modal .overlay{
+#search-and-cart-modal .overlay{
   width: 100vw;
   height: 100%;
   background-color: #0000;
 }
 
 /* on expansion make 300px */
-#search-page-modal .content{
+#search-and-cart-modal .content{
   width: 0;
   height: 100%;
   position: absolute;
   top: 0;
   right: 0;
   transition: 500ms!important;
-  background-color: #EDEDED;
+  background-color: #fbfbfb;
+}
+
+#search-and-cart-modal .content .flip{
+  position: relative;
+  /* background-color: red; */
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+}
+
+#search-and-cart-modal .content .flip .flip-item{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  /* background-color: blue; */
+  padding: 30px 10px;
+}
+
+#seach-area{
+  display: flex;
+}
+
+.top{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3vh;
+  border-bottom: 1px solid #0003;
+}
+.search-items{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.search-items input{
+  font-family: "Roboto Flex", sans-serif;
+  font-weight: bold;
+  width: 66%;
+  padding: 10px 5px;
+  border-radius: 2px;
+  border: 1px solid #0003;
+}
+.search-items .navigation-icon:hover{
+  cursor: pointer;
 }

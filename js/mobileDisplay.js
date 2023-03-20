@@ -9,9 +9,9 @@ function hamburgerDisplay() {
 }
 
 function searchAndCartDisplay(){
-  const modal = document.getElementById("search-page-modal");
-  const overlay = document.querySelector("#search-page-modal .overlay");
-  const content = document.querySelector("#search-page-modal .content");
+  const modal = document.getElementById("search-and-cart-modal");
+  const overlay = document.querySelector("#search-and-cart-modal .overlay");
+  const content = document.querySelector("#search-and-cart-modal .content");
 
   const isMobile = window.matchMedia("(max-width: 768px");
 

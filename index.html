@@ -108,10 +108,27 @@
               </div>
             </button>
             
-            <section id="search-page-modal">
+            <section id="search-and-cart-modal">
               <div class="overlay"> 
                   <div class="content">
+                    <!-- flip will be used to switch from cart to search seamlessly -->
+                      <div class="flip">
+                        <div class="flip-search flip-item">
+                          <section #search-area>
 
+                            <div class="top">
+                                  <div class="search-items">
+                                    <img class="navigation-icon" src="imgs/main/leftArrow.svg" alt="">
+                                    <input type="text" placeholder="shoes, dresses, tops, etc...">
+                                    <img class="navigation-icon" src="imgs/header/search-icon.svg" alt="">
+                                    <img class="navigation-icon" src="imgs/header/cart-icon.svg" alt="">
+                                  </div>
+                                  <div id="search-autocomplete-area"></div>
+                            </div>
+
+                          </section>
+                        </div>
+                      </div>
                   </div>
               </div>
             </section>
@@ -214,12 +231,15 @@
 
 
       <main>
+
         <section class="ad-footer">
+
             <!-- TODO: need to add benefits here 
                 free shipping
                 free returns 
                 app 
                 giftcards -->
+
             <div class="ad-footer-container">
                 <div class="ad-footer-item">
                     <img src="imgs/main/return.svg" alt="" class="ad-footer-image"> 
@@ -240,15 +260,17 @@
                     <img src="imgs/main/discount.svg" alt="" class="ad-footer-image"> 
                     <p class="ad-footer-text">Discounts</p>
                 </div>
-
             </div>
+
         </section>
 
         <section class="product-page">
+
             <div class="results">
                 <div id="main-results" ></div> 
                 <div id="pagination-container"></div>
             </div>
+
         </section>
 
       </main>
