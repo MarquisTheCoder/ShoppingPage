@@ -31,10 +31,7 @@ class GlobalStateManager{
         totalResults: 0,
         totalPages: 0,
         start: 1,
-        end: 0,
-        filters: {
-            colors:["yellow", "amber", "orange", "vermillion", "red", "purple", "blue", "green"],
-        }
+        end: 0
     }
 
     //using an intial json template to add all object keys 

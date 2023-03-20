@@ -105,3 +105,35 @@
   color: #2A1A25bb;
   font-size: 1.3rem;
 }
+
+#filters{
+  display: flex;
+  padding: 40px 10px;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.filter-set h2{
+  margin-bottom: 8px;
+  color: #000b;
+}
+.filter-set .filter-items{
+
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 50px;
+  gap: 14px;
+}
+
+.filter-item{
+  width: fit-content;
+  height: fit-content;
+  background-color: #3333;
+  padding: 8px 12px;
+  border-radius: 2px;
+}
+
+.filter-item:hover{
+  cursor: pointer;
+}
