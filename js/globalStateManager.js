@@ -1,40 +1,54 @@
 
-const spring = new SearchSpringAPI();
 
+
+
+// Late night writing out your thoughts because youre running on 1000mg 
+// of caffeine and lack of sleep. 
+// what are your task?: 
+// we already are saving the initial search inside of the global state
+// so we need also need a function to update an already existing state key
+// by using getItem then using set item in session storage
+
+// TODO:
+// check if its actuallyt saving items in localstorage via dev tools 
+// console then you'll know the object is being saved at window.onload runtime
+// once this is verified start to write the update function its only like four
+// lines dont get lazy
+
+const spring = new SearchSpringAPI();
 
 class GlobalStateManager{
 
-     static state = {
-            currentSearch: spring.buildUrl("", page=1)
-        }
+    static blueprintState = {
+        currentSearch: spring.buildUrl("", 1)   
+    }
 
     //using an intial json template to add all object keys 
     //and values and local store variables. provides me with a quick method
     //to start a new global state from scratch or potentially use this class elsewhere
-    constructor(template){
-        this.template = template;
-        this.init(template); 
-    }
 
-    init(template){
-        for(const [key, value] of Object.entries(state)){
+
+    static init(blueprint){
+        console.log("state blue print saving")
+        console.log(blueprint)
+        for(const [key, value] of Object.entries(blueprint)){
             this.save(key, value);
         }
     }
 
-    save(key, value){
+    static save(key, value){
         localStorage.setItem(key, value);
     }
 
-    retrieve(key){
+    static retrieve(key){
         localStorage.getItem(key);
     }
 
-    delete(key){
+    static delete(key){
         localStorage.removeItem(key);
     }
 
-    clear(){
+    static clear(){
         localStorage.clear();
     }
 
