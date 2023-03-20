@@ -73,14 +73,31 @@
 
 .ad-footer > .ad-footer-container {
   width: 100%;
-  height: 100px;
+  height: 150px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 5px;
 }
 .ad-footer-container .ad-footer-item {
   height: 50px;
-  width: 25%;
+  width: 100px;
   border-radius: 10px;
+  padding: 2px;
   background: linear-gradient(to bottom, #9D147A, #E85B44);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+
+.ad-footer-item .ad-footer-image{
+  width: 25px;
+  filter: invert(100%);
+}
+
+.ad-footer-item .ad-footer-text{
+  color: white;
+  font-weight: bolder;
+  font-size: 0.65rem;
 }
