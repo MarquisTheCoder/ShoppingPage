@@ -3,7 +3,4 @@
 // and HTML because thats what the initial technical asked me to know plus it shows
 // a solid understanding of the fundamentals.
 
-
-window.onload = function(){
-  console.log("starting")
-}
+GlobalStateManager.init(GlobalStateManager.blueprintState);
