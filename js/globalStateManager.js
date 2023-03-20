@@ -15,24 +15,22 @@
 // once this is verified start to write the update function its only like four
 // lines dont get lazy
 
-const spring = new SearchSpringAPI();
 
 class GlobalStateManager{
-
+    
+    static #spring = new SearchSpringAPI();
     static blueprintState = {
-        currentSearch: spring.buildUrl("", 1)   
+        currentSearch: GlobalStateManager.#spring.buildUrl("", 1)   
     }
 
     //using an intial json template to add all object keys 
     //and values and local store variables. provides me with a quick method
     //to start a new global state from scratch or potentially use this class elsewhere
 
-
     static init(blueprint){
-        console.log("state blue print saving")
-        console.log(blueprint)
+        console.log("state blue print saving");
         for(const [key, value] of Object.entries(blueprint)){
-            this.save(key, value);
+            GlobalStateManager.save(key, value);
         }
     }
 

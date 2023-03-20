@@ -38,10 +38,13 @@
 
     <title>Searchspring - #1 one clothing store for spring outfits</title>
   <script>
-      window.onscroll = function () { 
+    window.onload = function(){
+      GlobalStateManager.init(GlobalStateManager.blueprintState)
+    }
+  </script>
+  <script>
+      window.onscroll = function () {
       const navbar = document.getElementsByClassName('main-navigation')[0];
-      console.log(document.documentElement.scrollTop)
-      console.log(navbar.style.height)
 
     if (document.documentElement.scrollTop >= 3) {
         navbar.classList.add("scrolled"); 

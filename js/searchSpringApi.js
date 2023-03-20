@@ -34,7 +34,7 @@ class SearchSpringAPI {
     let url = `${this.baseUrl}?resultsFormat=${this.resultsFormat}&redirectResponse=minimal&page=${page}&resultsPerPage=${resultsPerPage}&q=${query}&siteId=${this.siteId}`;
     //if filter string remains empty do not add filter
     url += filter === "" ? "" : `filter=${filter}`;
-    console.log(url)
+    // console.log(url)
     return url;
   }
 

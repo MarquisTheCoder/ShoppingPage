@@ -12,7 +12,6 @@ function loadResults(query, page){
   //for init this will be 1, ""
   spring.search(query, page=page)
     .then((response) => {
-      console.log(response.results[0]);
       return response.results; 
     })
     .then((json) => {
