@@ -36,6 +36,8 @@ class SearchSpringAPI {
     //only if filter string in inputted add a filter
     url += filter === "" ? "" : `filter=${filter}`;
     // console.log(url)
+    GlobalStateManager.save("currentSearch", url);
+    console.log(GlobalStateManager.retrieve("currentSearch"));
     return url;
   }
 

@@ -16,13 +16,17 @@
 // lines dont get lazy
 
 
+// you dont need an update function unless you want to memoize local storage data
+// and prevent the saving of repeat data in faulty keys this is a useful and viable reason
+// to make an update function 
+
 class GlobalStateManager{
 
-    static #spring = new SearchSpringAPI();
+    static #defaultInitialSearch = "http://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=&resultsFormat=native&page=1";
 
     //creating initial blueprint to be saved into localStorage via GlobalStateManager.init()
     static blueprintState = {
-        currentSearch: GlobalStateManager.#spring.buildUrl("", 1),
+        currentSearch: GlobalStateManager.#defaultInitialSearch,
         currentPage: 1,
         totalResults: 0,
         totalPages: 0,
@@ -45,8 +49,17 @@ class GlobalStateManager{
         localStorage.setItem(key, value);
     }
 
+    static update(key, value){
+        if(GlobalStateManager.retrieve(key) !== null){
+            GlobalStateManager.save(key, value);
+            return true;
+        }
+        console.log(`Cannot update key [${key}] that does not exist.`);
+        return false; 
+    }
+
     static retrieve(key){
-        localStorage.getItem(key);
+        return localStorage.getItem(key);
     }
 
     static delete(key){
