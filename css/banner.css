@@ -14,9 +14,12 @@
 .banner .banner-item-container {
   min-width: 70%;
   width: 90%;
-  height: calc(80vh / 3);
+  height: calc(93vh / 3);
   overflow-x: scroll;
+  overflow-y: hidden;
   white-space: nowrap;
+  scrollbar-width: none;
+
   /* scrollbar-width: none; */
 }
 
