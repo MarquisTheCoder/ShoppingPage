@@ -18,7 +18,7 @@
 
 // you dont need an update function unless you want to memoize local storage data
 // and prevent the saving of repeat data in faulty keys this is a useful and viable reason
-// to make an update function 
+// to make an update function
 
 class GlobalStateManager{
 
@@ -31,7 +31,10 @@ class GlobalStateManager{
         totalResults: 0,
         totalPages: 0,
         start: 1,
-        end: 0
+        end: 0,
+        filters: {
+            colors:["yellow", "amber", "orange", "vermillion", "red", "purple", "blue", "green"],
+        }
     }
 
     //using an intial json template to add all object keys 

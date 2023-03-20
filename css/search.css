@@ -92,11 +92,11 @@
 
 /* results */
 .results-information{
-  width: 70%;
+  width: 80%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  margin-top: 40px;
   padding: 30px 0;
-
 }
 
 .results-information > p{
