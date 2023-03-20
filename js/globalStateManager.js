@@ -17,12 +17,16 @@
 
 
 class GlobalStateManager{
-    
+
     static #spring = new SearchSpringAPI();
     static blueprintState = {
-        currentSearch: GlobalStateManager.#spring.buildUrl("", 1)   
+        currentSearch: GlobalStateManager.#spring.buildUrl("", 1),
+        currentPage: 1,
+        totalResults: 0,
+        totalPages: 0,
+        start: 1,
+        end: 0
     }
-
     //using an intial json template to add all object keys 
     //and values and local store variables. provides me with a quick method
     //to start a new global state from scratch or potentially use this class elsewhere

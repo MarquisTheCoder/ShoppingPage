@@ -12,6 +12,7 @@ function loadResults(query, page){
   //for init this will be 1, ""
   spring.search(query, page=page)
     .then((response) => {
+      //here is where we will add pagination to the global state
       return response.results; 
     })
     .then((json) => {
