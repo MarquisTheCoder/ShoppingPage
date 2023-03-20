@@ -21,6 +21,9 @@ function hamburgerDisplay() {
   }
 }
 
+function autocomplete(){
+  
+}
 function searchAndCartDisplay(){
  
 

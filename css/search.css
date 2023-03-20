@@ -61,6 +61,14 @@
   padding-bottom: 3vh;
   border-bottom: 1px solid #0003;
 }
+
+.middle{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+}
 .search-items{
   width: 100%;
   height: fit-content;

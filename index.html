@@ -119,11 +119,20 @@
                             <div class="top">
                                   <div class="search-items">
                                     <img id="search-back-button" class="navigation-icon" src="imgs/main/leftArrow.svg" alt="">
-                                    <input type="text" placeholder="shoes, dresses, tops, etc...">
+                                    <input id="search-input" type="text" placeholder="shoes, dresses, tops, etc...">
                                     <img class="navigation-icon" src="imgs/header/search-icon.svg" alt="">
                                     <img class="navigation-icon" src="imgs/header/cart-icon.svg" alt="">
                                   </div>
-                                  <div id="search-autocomplete-area"></div>
+
+                                  <div id="search-autocomplete-area">
+                                    <div div class="suggestion-filter">
+                                      <div id="user-query"> </div>
+                                    </div>
+                                  </div>
+
+                            </div>
+                            <div class="middle">
+                              
                             </div>
 
                           </section>
@@ -289,6 +298,7 @@
     <script src="js/resultsManager.js"></script>
     <script src="js/mobileDisplay.js"></script>
     <script src="js/loadResults.js"></script>
+    <script src="js/searching.js"></script>
     <!-- <script src="js/logTest.js"></script> -->
     
   </body>

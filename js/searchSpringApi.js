@@ -15,7 +15,8 @@ class SearchSpringAPI {
   constructor(siteId = "scmq7n", resultsFormat = "native") {
     this.siteId = siteId;
     this.resultsFormat = resultsFormat;
-    this.baseUrl = `https://api.searchspring.io/api/search/search.json`;
+    this.baseUrl = `https://api.searchspring.io/api/search/autocomplete.json`;
+
   }
 
   //static properties

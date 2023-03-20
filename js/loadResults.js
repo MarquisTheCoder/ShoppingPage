@@ -11,9 +11,15 @@ function loadResults(query, page){
   resultsManager.resetResults();
 
   //for init this will be 1, ""
-  spring.search(query, page=page)
+  spring.search(query, page)
     .then((response) => { 
       console.log(response)
+
+      GlobalStateManager.update('totalResults', response.pagination.totalResults);
+      GlobalStateManager.update('totalPages', response.pagination.totalPages);
+      GlobalStateManager.update('currentPage', page);
+
+
       if(query != ""){
         document.getElementById("query-information").innerText = `Search: "${query}"`;
         document.getElementById("pages-information").innerText = `${page} - ${response.pagination.totalPages}`;
@@ -22,11 +28,7 @@ function loadResults(query, page){
       
 
 
-      GlobalStateManager.update('totalResults', response.pagination.totalResults);
-      GlobalStateManager.update('totalPages', response.pagination.totalPages);
-      GlobalStateManager.update('currentPage', page);
-
-
+    
       //here is where we will add pagination to the global state
       return response.results; 
     })
