@@ -77,7 +77,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 8px;
+  background: url("../imgs/header/banner/flower.jpg");
+  background-position: top 15% left 30%;
+  border-bottom: #0004;
 }
 .ad-footer-container .ad-footer-item {
   height: 50px;
