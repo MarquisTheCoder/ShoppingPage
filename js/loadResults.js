@@ -4,6 +4,7 @@
 //this will be very useful when utilizing our global state
 //manager later
 function loadResults(query, page){
+
   const spring = new SearchSpringAPI();
   const resultsManager = new ResultsManager();
 
@@ -11,7 +12,21 @@ function loadResults(query, page){
 
   //for init this will be 1, ""
   spring.search(query, page=page)
-    .then((response) => {
+    .then((response) => { 
+      console.log(response)
+      if(query != ""){
+        document.getElementById("query-information").innerText = `Search: "${query}"`;
+        document.getElementById("pages-information").innerText = `${page} - ${response.pagination.totalPages}`;
+        // document.getElementById("result-count-information").innerText = `${response.pagination.totalResults}`;
+      }
+      
+
+
+      GlobalStateManager.update('totalResults', response.pagination.totalResults);
+      GlobalStateManager.update('totalPages', response.pagination.totalPages);
+      GlobalStateManager.update('currentPage', page);
+
+
       //here is where we will add pagination to the global state
       return response.results; 
     })
@@ -24,5 +39,5 @@ function loadResults(query, page){
 }
 
 window.onload = () => {
-  loadResults("", page=1);
+  loadResults("", page=GlobalStateManager.currentPage);
 };

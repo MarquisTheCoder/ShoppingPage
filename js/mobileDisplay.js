@@ -1,3 +1,16 @@
+
+const modal = document.getElementById("search-and-cart-modal");
+const overlay = document.querySelector("#search-and-cart-modal .overlay");
+const content = document.querySelector("#search-and-cart-modal .content");
+const backButton = document.getElementById("search-back-button");
+
+backButton.addEventListener('click', () =>{
+  modal.style.width = 0;
+  content.style.width=0;
+  overlay.style["background-color"] = "#0000";
+
+});
+
 /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
 function hamburgerDisplay() {
   var x = document.getElementById("main-menu");
@@ -9,9 +22,7 @@ function hamburgerDisplay() {
 }
 
 function searchAndCartDisplay(){
-  const modal = document.getElementById("search-and-cart-modal");
-  const overlay = document.querySelector("#search-and-cart-modal .overlay");
-  const content = document.querySelector("#search-and-cart-modal .content");
+ 
 
   const isMobile = window.matchMedia("(max-width: 768px");
 
