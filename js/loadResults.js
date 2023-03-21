@@ -10,7 +10,6 @@ function loadResults(query, page){
 
   resultsManager.resetResults();
 
-  console.log(query, page);
   
   //for init this will be 1, ""
   spring.search(query, page)

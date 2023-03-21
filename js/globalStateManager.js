@@ -25,9 +25,8 @@ class GlobalStateManager{
 
     //creating initial blueprint to be saved into localStorage via GlobalStateManager.init()
     static blueprintState = {
-        currentSearch:'http://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=""&resultsFormat=native&page=1',
+        currentSearch:'http://api.searchspring.net/api/search/search.json?siteId=scmq7n&resultsFormat=native&page=1',
         currentPage: 1,
-        query: "",
         totalResults: 0,
         totalPages: 0,
         start: 1,

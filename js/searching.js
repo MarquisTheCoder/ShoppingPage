@@ -70,6 +70,7 @@ for(item of document.getElementsByClassName("filter-item")){
             this.remove();
             currentFilters.append(this);
             UrlHandler.addFilter(this.dataset.filter, this.dataset.value);
+            console.log(GlobalStateManager.retrieve("currentSearch"))
             loadResults(searchInput.value, 1);
 
         //moving the filter preset back to the filter items element
@@ -80,7 +81,6 @@ for(item of document.getElementsByClassName("filter-item")){
            UrlHandler.removeFilter(this.dataset.filter, this.dataset.value);
            loadResults(searchInput.value, 1);
         }
-
     })
 
 }
