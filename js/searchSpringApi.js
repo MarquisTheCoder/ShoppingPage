@@ -16,8 +16,8 @@ class SearchSpringAPI {
   //using this function for each request
   search = async ( query, page = 1, resultsPerPage = this.resultsPerPageDefault,filter = "") => {
     GlobalStateManager.save("searchQuery", query);
-    console.log(GlobalStateManager.retrieve("currentSearch"));
-    let response = await fetch( GlobalStateManager.retrieve("currentSearch") + `&q=${query}`, SearchSpringAPI.options);
+    console.log(GlobalStateManager.retrieve("currentSearch") + `&rq=${query}`);
+    let response = await fetch( GlobalStateManager.retrieve("currentSearch") + `&rq=${query}`, SearchSpringAPI.options);
     let json = response.json();
     let results = json;
     return results;

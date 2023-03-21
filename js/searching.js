@@ -5,7 +5,7 @@ const searchInput = document.getElementById("search-input");
 function createFilter(name, type){
     return `
      <div class="filter-item" data-type="${type}"
-      data-filter="${(type == "color") ? "filter.color" : ``}${(type == "price") ? "filter.price" : ``}${(type == "size") ? "filter.size": ``}"
+      data-filter="${(type == "color") ? "color" : ``}${(type == "price") ? "price" : ``}${(type == "size") ? "size": ``}"
       data-value="${name.trim()}">
         <p>${name}</p>
      </div>
