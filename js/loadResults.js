@@ -15,6 +15,7 @@ function loadResults(query, page){
     .then((response) => { 
       console.log(response)
 
+      //just incase i need these later
       GlobalStateManager.update('totalResults', response.pagination.totalResults);
       GlobalStateManager.update('totalPages', response.pagination.totalPages);
       GlobalStateManager.update('currentPage', page);
