@@ -129,11 +129,22 @@
 .filter-item{
   width: fit-content;
   height: fit-content;
-  background-color: #3333;
+  /* background-color: #3333; */
+  background-color: #000d;
+  color: white;
   padding: 8px 12px;
   border-radius: 2px;
 }
 
 .filter-item:hover{
   cursor: pointer;
+}
+
+#current-filters{
+  display: none;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 20px;
+  gap: 14px;
 }
