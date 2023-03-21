@@ -1,15 +1,11 @@
 
 
 const searchInput = document.getElementById("search-input");
-let filterSettings
-
 
 function createFilter(name, type){
     return `
      <div class="filter-item" data-type="${type}"
-      data-filter="${(type == "color") ? "filter.color" : ``} 
-                   ${(type == "price") ? "filter.price" : ``}
-                   ${(type == "size") ? "filter.size" : ``}"
+      data-filter="${(type == "color") ? "filter.color" : ``}${(type == "price") ? "filter.price" : ``}${(type == "size") ? "filter.size": ``}"
       data-value="${name.trim()}">
         <p>${name}</p>
      </div>
@@ -22,6 +18,8 @@ function loadFilter(element, name, type){
 
 
 function loadFilters(){
+
+    // all filter presets
     const filters =  {
         colors:["yellow", "amber", "orange", "vermillion", "red", "purple", "blue", "green"],
         prices: ["low","medium","high"],
@@ -33,42 +31,60 @@ function loadFilters(){
     const pricingFilters = document.getElementById("filter-item-prices");
     const sizeFilters = document.getElementById("filter-item-sizes");
 
+    //loading color presets
     filters.colors.forEach(color => {
        loadFilter(colorFilters, color, "color"); 
     }); 
 
+    //loading price presets
     filters.prices.forEach(price => {
         loadFilter(pricingFilters, price, "price");
     })
 
+    //loading size presets
     filters.sizes.forEach(size => {
         loadFilter(sizeFilters, size, "size");
     })
 }
+
 loadFilters();
+
 
 const currentFilters = document.getElementById("current-filters");
 const filterItems = document.getElementById("filter-items")
 
-//TODO: you need to modify and update the search query by adding and removing the filters from
-// the search query. you need a sustainable way to do this
+
+
+//adding eventer listener to all filter items
 for(item of document.getElementsByClassName("filter-item")){
+
+
+    //on filter click
     item.addEventListener("click", function(){
-        currentFilters.style.display = "flex"; 
+
+        // display current filters
+        currentFilters.style.display = "flex";
+
+        // move the selecting to the current filters element
         if(this.parentNode.classList.contains("filter-items")){
             this.remove();
             currentFilters.append(this);
             UrlHandler.addFilter(this.dataset.filter, this.dataset.value);
+            loadResults(searchInput.value, 1);
+
+        //moving the filter preset back to the filter items element
         }else{
            this.remove();
            let filterSet = document.getElementById(`filter-item-${this.dataset.type}s`);
            filterSet.append(this);
+           UrlHandler.removeFilter(this.dataset.filter, this.dataset.value);
+           loadResults(searchInput.value, 1);
         }
-       
+
     })
+
 }
-searchInput.addEventListener('input', () =>{
-    UrlHandler.addFilter("filter.color", "red");
-    console.log(GlobalStateManager.retrieve("currentSearch"))
-    loadResults(GlobalStateManager.retrieve("currentSearch"), 1);
+searchInput.addEventListener('input', function(){
+    let currentUrl = GlobalStateManager.retrieve("currentSearch");
+    loadResults(searchInput.value, 1);
 })

@@ -10,27 +10,19 @@ function loadResults(query, page){
 
   resultsManager.resetResults();
 
+  console.log(query, page);
+  
   //for init this will be 1, ""
   spring.search(query, page)
     .then((response) => { 
-      console.log(response)
-
-      //just incase i need these later
-      GlobalStateManager.update('totalResults', response.pagination.totalResults);
-      GlobalStateManager.update('totalPages', response.pagination.totalPages);
-      GlobalStateManager.update('currentPage', page);
-
-
       if(query != ""){
         document.getElementById("query-information").innerText = `Search: "${query}"`;
         document.getElementById("pages-information").innerText = `${page} - ${response.pagination.totalPages}`;
         // document.getElementById("result-count-information").innerText = `${response.pagination.totalResults}`;
       }
-      
+          
+      //-----------------here is where we will add pagination to the global state --------------------------------
 
-
-    
-      //here is where we will add pagination to the global state
       return response.results; 
     })
     .then((json) => {
@@ -42,5 +34,5 @@ function loadResults(query, page){
 }
 
 window.onload = () => {
-  loadResults("", page=GlobalStateManager.currentPage);
+  loadResults("", GlobalStateManager.currentPage);
 };

@@ -22,12 +22,12 @@
 
 class GlobalStateManager{
 
-    static #defaultInitialSearch = "http://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=&resultsFormat=native&page=1";
 
     //creating initial blueprint to be saved into localStorage via GlobalStateManager.init()
     static blueprintState = {
-        currentSearch: GlobalStateManager.#defaultInitialSearch,
+        currentSearch:'http://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=""&resultsFormat=native&page=1',
         currentPage: 1,
+        query: "",
         totalResults: 0,
         totalPages: 0,
         start: 1,
@@ -45,10 +45,12 @@ class GlobalStateManager{
         }
     }
 
+    //saving a key value pair to local storage
     static save(key, value){
         localStorage.setItem(key, value);
     }
 
+    //making sure faulty values don't get saved into local storage
     static update(key, value){
         if(GlobalStateManager.retrieve(key) !== null){
             GlobalStateManager.save(key, value);
@@ -58,14 +60,17 @@ class GlobalStateManager{
         return false; 
     }
 
+    //pull a key from local storage
     static retrieve(key){
         return localStorage.getItem(key);
     }
 
+    //delete a key from local storage
     static delete(key){
         localStorage.removeItem(key);
     }
 
+    //clear local storage
     static clear(){
         localStorage.clear();
     }
