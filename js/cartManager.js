@@ -7,6 +7,18 @@ class CartManager {
   static #searchSide = document.getElementsByClassName("flip-search")[0];
   static #cartSide = document.getElementsByClassName("flip-cart")[0];
 
+  //initializing the cart manager by adding event listeners to all add to cart buttons
+  static init() {
+    let allCartButtons = document.getElementsByClassName("add-to-cart");
+    for (let cartButton of allCartButtons) {
+      cartButton.addEventListener("click", function () {
+        let product = CartManager.findParentProdct(this);
+        let cartItem = CartManager.generateCartProduct(product);
+        console.log(cartItem);
+        CartManager.addProductToCart(cartItem);
+      });
+    }
+  }
   //retreiving cart element and adding/subtracting by parameter
   static changeCartAmount(amount) {
     CartManager.#cartAmount.innerText =
@@ -54,7 +66,7 @@ class CartManager {
   //adding product to cart
   static addProductToCart(product) {
     CartManager.changeCartAmount(1);
-    CartManager.#cart.innerHTML += CartManager.generateCartProduct(product);
+    CartManager.#cart.innerHTML += product;
   }
 
   //removing product from cart
