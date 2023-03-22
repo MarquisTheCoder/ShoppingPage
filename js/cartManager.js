@@ -1,7 +1,7 @@
 class CartManager {
   //capturing all elements needed for the cart maanagement
   static #cartState = () => GlobalStateManager.retrieve("cart");
-  static #cart = document.getElementById("cart");
+  static #cart = document.getElementById("cart-items");
   static #cartAmount = document.getElementById("cart-amount");
 
   static #searchSide = document.getElementsByClassName("flip-search")[0];
@@ -19,6 +19,7 @@ class CartManager {
       });
     }
   }
+
   //retreiving cart element and adding/subtracting by parameter
   static changeCartAmount(amount) {
     CartManager.#cartAmount.innerText =
@@ -46,17 +47,32 @@ class CartManager {
     let productPrice =
       product.getElementsByClassName("product-price")[0].innerText;
     let productId = product.dataset.productId;
+    let productName = product.dataset.name;
 
     return `
-      <div class="cart-product" data-id="${productId}">
-        <img src="${productImage.src}" alt="${productImage.alt}" />
-        <div class="cart-product-info">
+      <div class="cart-product" data-id="${productId}" style="display:inherit">
+        <div class="cart-product-image-container">
+          <img
+            src="${productImage.src}"
+            alt="${productImage.alt}"
+            class="cart-product-image"
+          />
+        </div>
+        <div class="cart-product-name" flex><p>${productName}</p></div>
+        <div class="cart-product-info align-cart">
           <p class="product-price">${productPrice}</p>
-          <div class="product-quantity-changer">
-            <img src="../imgs/minus.svg" alt="minus" />
-            <p class="product-quantity">product price</p>
-            <img src="../imgs/plus.svg" alt="plus" />
-            <img src="../imgs/trash.svg" alt="remove" />
+          <div class="product-quantity-changer flex">
+            <img src="imgs/minus.svg" alt="minus" class="amount-changer" />
+            <p class="product-quantity">0</p>
+            <img src="imgs/plus.svg" alt="plus" class="amount-changer" />
+            <div class="trash-container">
+              <img
+                src="imgs/trash.svg"
+                alt="remove"
+                class="amount-changer trash"
+              />
+            </div>
+
           </div>
         </div>
       </div>
