@@ -18,7 +18,7 @@ class ResultsManager {
     let percentage = (100 - (price / msrp) * 100).toFixed(0);
 
     return ` 
-      <div class="product" data-id="${result.id}" data-name="${
+      <div class="product" id=${result.id} data-id="${result.id}" data-name="${
       result.name
     }" data-product-url="${result.url}">
         <div class="product-image-container">

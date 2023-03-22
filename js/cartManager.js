@@ -12,10 +12,9 @@ class CartManager {
     let allCartButtons = document.getElementsByClassName("add-to-cart");
     for (let cartButton of allCartButtons) {
       cartButton.addEventListener("click", function () {
-        let product = CartManager.findParentProdct(this);
+        let product = CartManager.findParentProduct(this);
         let cartItem = CartManager.generateCartProduct(product);
-        console.log(cartItem);
-        CartManager.addProductToCart(cartItem);
+        CartManager.addProductToCart(cartItem, product.dataset.id);
       });
     }
   }
@@ -37,7 +36,7 @@ class CartManager {
     }
   }
 
-  static findParentProdct(element) {
+  static findParentProduct(element) {
     return element.closest(".product");
   }
 
@@ -46,11 +45,11 @@ class CartManager {
     let productImage = product.getElementsByClassName("product-image")[0];
     let productPrice =
       product.getElementsByClassName("product-price")[0].innerText;
-    let productId = product.dataset.productId;
+    let productId = product.dataset.id;
     let productName = product.dataset.name;
 
     return `
-      <div class="cart-product" data-id="${productId}" style="display:inherit">
+      <div class="cart-product" data-id="${productId}" id="cart-${productId}" style="display:inherit">
         <div class="cart-product-image-container">
           <img
             src="${productImage.src}"
@@ -80,13 +79,22 @@ class CartManager {
   }
 
   //adding product to cart
-  static addProductToCart(product) {
-    CartManager.changeCartAmount(1);
-    CartManager.#cart.innerHTML += product;
+  static addProductToCart(product, id) {
+    let existingCartItem = document.querySelector(`#cart-${id}`);
+
+    if (existingCartItem !== null) {
+      let quantity =
+        existingCartItem.getElementsByClassName("product-quantity")[0];
+      quantity.innerText = parseInt(quantity.innerText) + 1;
+      console.log(quantity.innerText);
+    } else {
+      CartManager.changeCartAmount(1);
+      CartManager.#cart.innerHTML += product;
+    }
   }
 
   //removing product from cart
-  static removeProductFromCart(cartProduct) {
+  static removeProductFromCart(cartProduct, id) {
     CartManager.changeCartAmount(-1);
     cartProduct.remove();
   }
