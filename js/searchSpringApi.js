@@ -22,4 +22,5 @@ class SearchSpringAPI {
     let results = json;
     return results;
   };
+
 }

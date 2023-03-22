@@ -16,5 +16,8 @@ html {
   flex-direction: column;
 }
 .hidden {
-  display: none;
+  display: none!important;
+}
+.flipped{
+  display: none!important;
 }
