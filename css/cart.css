@@ -1,0 +1,17 @@
+#suggested-items h2 {
+  margin-bottom: 5px;
+}
+
+#suggested-items {
+  position: absolute;
+  padding: 10px;
+  bottom: 0;
+  left: 0;
+  min-width: 100%;
+}
+
+#suggested-items-list {
+  min-height: 20vh;
+  width: 100%;
+  background-color: red;
+}

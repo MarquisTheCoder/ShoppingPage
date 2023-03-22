@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="css/banner.css" />
     <link rel="stylesheet" href="css/search.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/cart.css" />
     <link rel="stylesheet" href="css/ads.css" />
 
     <!-- segmenting css by element for ease if targeting and expansion later -->
@@ -115,14 +116,14 @@
                       <div class="flip">
                         <div class="flip-search flip-item">
                           <section #search-area>
-
+                       
                             <div class="top">
 
                                   <div class="search-items">
                                     <img id="search-back-button" class="navigation-icon" src="imgs/main/leftArrow.svg" alt="">
                                     <input id="search-input" type="text" placeholder="shoes, dresses, tops, etc...">
                                     <img class="navigation-icon" src="imgs/header/search-icon.svg" alt="">
-                                    <img class="navigation-icon" src="imgs/header/cart-icon.svg" alt="">
+                                    <img class="navigation-icon" src="imgs/header/cart-icon.svg" alt="" onclick="CartManager.flipTo('cart')">
                                   </div>
 
                                   <div id="search-autocomplete-area">
@@ -165,7 +166,24 @@
 
                           </section>
                         </div>
-                        <div class="flip-cart flip-item flipped"></div>
+                        <div class="flip-cart flip-item flipped">
+                          <section id="cart-area">
+                            <div class="top">
+                              <h2>Cart Items </h2>
+                            </div>
+                            <div class="middle">
+                              <div id="cart-items"> 
+
+                              </div>
+                            </div>
+                            <div class="bottom">
+                              <section id="suggested-items">
+                                <h2>Suggested Items</h2>
+                                  <div id="suggested-items-list"></div>
+                              </section>
+                            </div>
+                          </section>
+                        </div>
                       </div>
                   </div>
               </div>
@@ -330,6 +348,7 @@
     <script src="js/loadResults.js"></script>
     <script src="js/searching.js"></script>
     <script src="js/urlHandler.js"></script>
+    <script src="js/cartManager.js"></script>
     <!-- <script src="js/logTest.js"></script> -->
     
   </body>
