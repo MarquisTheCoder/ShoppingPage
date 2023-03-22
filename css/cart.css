@@ -73,14 +73,16 @@
     brightness(96%) contrast(106%);
   margin-left: 10px;
 }
+
 .cart-product .product-price {
-    color: #000b
+  color: #000b;
   font-weight: bold;
   font-size: 1.2rem;
   margin-top: 20px;
   margin-right: 10px;
   margin-bottom: 5px;
 }
+
 .cart-product .product-quantity {
   font-weight: bold;
   border: 1px solid #0002;
@@ -92,12 +94,11 @@
   align-items: center;
   gap: 4px;
 }
-
-.cart-product-name{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60%;
-    height: 100%;
-    overflow-x: hidden;
+.cart-product-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: 100%;
+  overflow-x: hidden;
 }
