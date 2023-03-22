@@ -23,14 +23,15 @@
 class GlobalStateManager{
 
 
-    //creating initial blueprint to be saved into localStorage via GlobalStateManager.init()
+    //creating initial blueprint to be saved into localStorage
     static blueprintState = {
         currentSearch:'http://api.searchspring.net/api/search/search.json?siteId=scmq7n&resultsFormat=native&page=1',
         currentPage: 1,
         totalResults: 0,
         totalPages: 0,
         start: 1,
-        end: 0
+        end: 0,
+        cart: []
     }
 
     //using an intial json template to add all object keys 

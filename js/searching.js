@@ -19,11 +19,13 @@ function loadFilter(element, name, type){
 
 function loadFilters(){
 
+
+   
     // all filter presets
     const filters =  {
         colors:["yellow", "amber", "orange", "vermillion", "red", "purple", "blue", "green"],
         prices: ["low","medium","high"],
-        sizes: ["small", "medium", "large"]
+        sizes: [ "5.5","6","6.5","7","7.5","8","8.5","9","10"]
     };
 
     //using variables instead of accessing class array for code readability and semantics
