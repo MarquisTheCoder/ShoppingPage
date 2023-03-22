@@ -15,7 +15,7 @@ class CartManager {
         let product = CartManager.findParentProdct(this);
         let cartItem = CartManager.generateCartProduct(product);
         console.log(cartItem);
-        CartManager.addProductToCart(cartItem);
+        CartManager.addProductToCart(cartItem, cartItem.dataset.id);
       });
     }
   }
@@ -50,7 +50,7 @@ class CartManager {
     let productName = product.dataset.name;
 
     return `
-      <div class="cart-product" data-id="${productId}" style="display:inherit">
+      <div class="cart-product" data-id="${productId}" id="${productId}" style="display:inherit">
         <div class="cart-product-image-container">
           <img
             src="${productImage.src}"
@@ -80,13 +80,20 @@ class CartManager {
   }
 
   //adding product to cart
-  static addProductToCart(product) {
+  static addProductToCart(product, id) {
     CartManager.changeCartAmount(1);
-    CartManager.#cart.innerHTML += product;
+    if (document.querySelector(`.cart-product#${id}`) !== null) {
+      let quantity = documentquerySelector(
+        `.cart-product#${id}.product-quantity`
+      );
+      quantity.innerText = parseInt(quantity.innerText) + 1;
+    } else {
+      CartManager.#cart.innerHTML += product;
+    }
   }
 
   //removing product from cart
-  static removeProductFromCart(cartProduct) {
+  static removeProductFromCart(cartProduct, id) {
     CartManager.changeCartAmount(-1);
     cartProduct.remove();
   }
