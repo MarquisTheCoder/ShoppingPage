@@ -46,6 +46,6 @@
 /* making sure the positioning of the pagination arrows is different for all devices */
 @media only screen and (max-width: 480px) {
   .showPagination {
-    bottom: 20vh !important;
+    bottom: 12vh !important;
   }
 }
