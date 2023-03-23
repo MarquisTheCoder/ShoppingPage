@@ -20,3 +20,8 @@
   width: 100%;
   height: fit-content;
 }
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
