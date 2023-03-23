@@ -1,7 +1,7 @@
 /* navbar global screen css */
 .main-navigation {
   z-index: 6;
-
+  position: relative;
   background-color: white;
   width: 100vw;
   height: 60px;
@@ -16,14 +16,19 @@
 }
 
 .main-navigation .main-menu {
+  background-color: #fff;
   display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  left: 0;
 }
 
 .main-navigation .main-menu a {
   color: black;
   padding: 8px;
-  display: block;
   font-size: 1rem;
+  text-decoration: none;
 }
 
 /* hamburger menu code */
@@ -75,7 +80,7 @@
   font-size: 0.5rem;
 }
 
-.scrolled{
+.scrolled {
   position: fixed;
   top: 0;
   left: 0;
