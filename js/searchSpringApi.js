@@ -20,7 +20,7 @@ class SearchSpringAPI {
     let response = await fetch(
       `${GlobalStateManager.retrieve(
         "currentSearch"
-      )}&rq=${query}&page=${page}`.replace("http", "https"),
+      )}&rq=${query}&page=${page}`,
       SearchSpringAPI.options
     );
 
