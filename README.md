@@ -15,5 +15,14 @@
     
   </div>
   
+<hr>
+
+
+[![showcase image](https://github.com/MarquisTheCoder/searchspring-page/blob/main/imgs/examples/1.png)]()
+ <br>
+[![showcase image](https://github.com/MarquisTheCoder/searchspring-page/blob/main/imgs/examples/2.png)]()
+  <br>
+[![showcase image](https://github.com/MarquisTheCoder/searchspring-page/blob/main/imgs/examples/3.png)]()
+<hr>
   
 </div>
