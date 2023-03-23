@@ -13,13 +13,14 @@ class SearchSpringAPI {
   //using this function for each request
   search = async (
     query,
-    page = 1,
+    page,
     resultsPerPage = this.resultsPerPageDefault,
     filter = ""
   ) => {
-    console.log(GlobalStateManager.retrieve("currentSearch") + `&rq=${query}`);
     let response = await fetch(
-      GlobalStateManager.retrieve("currentSearch") + `&rq=${query}`,
+      `${GlobalStateManager.retrieve(
+        "currentSearch"
+      )}&rq=${query}&page=${page}`,
       SearchSpringAPI.options
     );
     let json = response.json();

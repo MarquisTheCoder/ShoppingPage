@@ -1,12 +1,12 @@
 //function to load results of any query and page
 //this will be very useful when utilizing our global state
 //manager later
-function loadResults(query, page) {
+function loadResults(page) {
   const spring = new SearchSpringAPI();
   const resultsManager = new ResultsManager();
 
   resultsManager.resetResults();
-
+  let query = GlobalStateManager.retrieve("currentQuery");
   //for init this will be 1, ""
   spring
     .search(query, page)
@@ -22,7 +22,7 @@ function loadResults(query, page) {
       }
 
       //-----------------here is where we will add pagination to the global state --------------------------------
-
+      currentPage.innerText = page;
       return response.results;
     })
     .then((json) => {
@@ -37,12 +37,5 @@ function loadResults(query, page) {
 }
 
 window.onload = () => {
-  GlobalStateManager.save(
-    "currentPage",
-    parseInt(document.getElementById("pagination-curren").innerHTML)
-  );
-  loadResults(
-    GlobalStateManager.retrieve("currentQuery"),
-    GlobalStateManager.retrieve("currentPage")
-  );
+  loadResults(Math.floor(Math.random() * 10) + 1);
 };

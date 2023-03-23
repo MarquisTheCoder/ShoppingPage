@@ -71,9 +71,7 @@ for (item of document.getElementsByClassName("filter-item")) {
       this.remove();
       currentFilters.append(this);
       UrlHandler.addFilter(this.dataset.filter, this.dataset.value);
-      console.log(GlobalStateManager.retrieve("currentSearch"));
-      loadResults(GlobalStateManager.retrieve("currentQuery"), 1);
-
+      loadResults(1);
       //moving the filter preset back to the filter items element
     } else {
       this.remove();
@@ -82,12 +80,12 @@ for (item of document.getElementsByClassName("filter-item")) {
       );
       filterSet.append(this);
       UrlHandler.removeFilter(this.dataset.filter, this.dataset.value);
-      loadResults(GlobalStateManager.retrieve("currentQuery"), 1);
+      loadResults(1);
     }
   });
 }
+
 searchInput.addEventListener("input", function () {
   GlobalStateManager.update("currentQuery", searchInput.value);
-  let currentUrl = GlobalStateManager.retrieve("currentSearch");
-  loadResults(GlobalStateManager.retrieve("currentQuery"), 1);
+  loadResults(1);
 });
