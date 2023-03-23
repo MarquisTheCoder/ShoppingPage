@@ -108,9 +108,11 @@
 
             <button class="search-and-cart-button" id="cart">
               <img
+              id="main-cart-icon"
                 class="navigation-icon"
                 src="imgs/header/cart-icon.svg"
                 alt="cart icon"
+                onclick="startCart()"
               />
               <div id="cart-amount-container">
                 <span id="cart-amount">0</span>
@@ -180,6 +182,7 @@
                               <div class="search-items">
                                 <img id="search-back-button" class="navigation-icon" src="imgs/main/leftArrow.svg" alt="" onclick="CartManager.flipTo('search')">
                                 <h2>Cart Items</h2>
+                                <button id="checkout">Checkout</button>
                               </div>
                             </div>
                             <div class="middle">

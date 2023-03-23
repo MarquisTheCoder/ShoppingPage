@@ -114,3 +114,15 @@
   height: 100%;
   overflow-x: hidden;
 }
+
+#checkout {
+  padding: 20px 10px;
+  background: linear-gradient(to bottom, #9d147a, #e85b44);
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-weight: bolder;
+}
+#checkout:hover {
+  cursor: pointer;
+}
