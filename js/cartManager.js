@@ -21,6 +21,9 @@ class CartManager {
       });
     }
   }
+  static resetCart() {
+    CartManager.#cart.innerHTML = "";
+  }
   static delete(deleteButton) {
     let cartItem = CartManager.findParentCartItem(deleteButton);
     cartItem.remove();
