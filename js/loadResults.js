@@ -36,6 +36,26 @@ function loadResults(page) {
     });
 }
 
+function loadSuggestedProducts() {
+  const spring = new SearchSpringAPI();
+  const resultsManager = new ResultsManager();
+  const suggestedItemsList = document.getElementById("suggested-items-list");
+  let query = GlobalStateManager.retrieve("currentQuery");
+  suggestedItemsList.innerHTML = "";
+  //for init this will be 1, ""
+  spring
+    .search(query + "bottoms", 1)
+    .then((response) => {
+      return response.results;
+    })
+    .then((json) => {
+      json.forEach((result) => {
+        suggestedItemsList.innerHTML += resultsManager.toHtml(result);
+      });
+    });
+}
 window.onload = () => {
-  loadResults(Math.floor(Math.random() * 10) + 1);
+  //on page load we will render random default page between 1 and 30
+  loadResults(Math.floor(Math.random() * 30) + 1);
+  loadSuggestedProducts();
 };

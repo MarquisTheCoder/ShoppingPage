@@ -23,6 +23,7 @@ class SearchSpringAPI {
       )}&rq=${query}&page=${page}`,
       SearchSpringAPI.options
     );
+
     let json = response.json();
     let results = json;
     return results;

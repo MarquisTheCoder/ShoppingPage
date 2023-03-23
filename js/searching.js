@@ -88,4 +88,5 @@ for (item of document.getElementsByClassName("filter-item")) {
 searchInput.addEventListener("input", function () {
   GlobalStateManager.update("currentQuery", searchInput.value);
   loadResults(1);
+  loadSuggestedProducts();
 });
