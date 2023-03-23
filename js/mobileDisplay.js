@@ -21,12 +21,12 @@ function hamburgerDisplay() {
 
 function autocomplete() {}
 function searchAndCartDisplay() {
-  const isMobile = window.matchMedia("(max-width: 768px");
+  const isMobile = window.matchMedia("(max-width: 480px");
   if (isMobile.matches) {
     console.log(`match: ${isMobile.matches}`);
     content.style.width = "80vw";
-  } else {
-    content.style.width = "35vw";
+  } else if (window.matchMedia("(min-width: 780px").matches) {
+    content.style.width = "40vw";
   }
   modal.style.width = "100vw";
   overlay.style["background-color"] = "#0009";
