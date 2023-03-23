@@ -1,0 +1,26 @@
+.pagination-container {
+  display: none;
+}
+
+.showPagination {
+  display: flex !important;
+  justify-content: space-between;
+  z-index: 6;
+  background-color: #fffb;
+  width: 150px;
+  height: 50px;
+  position: fixed !important;
+  bottom: 10vh;
+  left: calc(50% - 100px);
+  border-radius: 10px;
+}
+
+.pagination-container #pagination-current {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}

@@ -25,7 +25,8 @@
     />
 
     <!-- external css -->
-    <link rel="stylesheet" href="css/generatedContent.css">
+    <link rel="stylesheet" href="css/generatedContent.css" />
+    <link rel="stylesheet" href="css/pagination.css" />
     <link rel="stylesheet" href="css/global.css" />
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/navbar.css" />
@@ -41,12 +42,19 @@
   <script>
       window.onscroll = function () {
       const navbar = document.getElementsByClassName('main-navigation')[0];
+      const pagination = document.getElementsByClassName('pagination-container')[0];
 
     if (document.documentElement.scrollTop >= 3) {
         navbar.classList.add("scrolled"); 
     } 
     else {
         navbar.classList.remove("scrolled");
+    }
+
+    if (document.documentElement.scrollTop >= 340) {
+        pagination.classList.add("showPagination");
+    }else{
+        pagination.classList.remove("showPagination");
     }
 
 };
@@ -334,18 +342,24 @@
                 <p id="result-count-information"></p>
               </div>
               <div id="main-results" ></div> 
-              <div id="pagination-container"></div>
             </div>
 
         </section>
 
+        </section>
       </main>
+        <section class="pagination-container">
+          <img src="imgs/up.svg" alt="" id="page-up" class="navigation-icon">
+          <p id="pagination-current">1</p>
+          <img src="imgs/down.svg" alt="" id="page-down" class="navigation-icon">
+        </section>
       <footer></footer>
     </div>
 
     <!-- external javascript -->
     <script src="js/globalStateManager.js"></script>
     <script src="js/searchSpringApi.js"></script>
+    <script src="js/pagination.js"></script>
     <script src="js/main.js"></script>
     <script src="js/resultsManager.js"></script>
     <script src="js/mobileDisplay.js"></script>

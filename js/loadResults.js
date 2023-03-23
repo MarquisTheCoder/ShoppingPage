@@ -37,5 +37,12 @@ function loadResults(query, page) {
 }
 
 window.onload = () => {
-  loadResults("", GlobalStateManager.currentPage);
+  GlobalStateManager.save(
+    "currentPage",
+    parseInt(document.getElementById("pagination-curren").innerHTML)
+  );
+  loadResults(
+    GlobalStateManager.retrieve("currentQuery"),
+    GlobalStateManager.retrieve("currentPage")
+  );
 };
