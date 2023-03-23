@@ -18,8 +18,9 @@
 class GlobalStateManager {
   //creating initial blueprint to be saved into localStorage
   static blueprintState = {
+    //making this url https is a BIG deal mnost browsers prevent mixed content requests!
     currentSearch:
-      "http://api.searchspring.net/api/search/search.json?siteId=scmq7n&resultsFormat=native",
+      "https://api.searchspring.net/api/search/search.json?siteId=scmq7n&resultsFormat=native",
     currentQuery: "",
     totalResults: 0,
     totalPages: 0,
