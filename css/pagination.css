@@ -26,6 +26,8 @@
 .pagination-box p {
   color: white;
 }
+
+/* centering text for the page */
 .pagination-container #pagination-current {
   height: 100%;
   text-align: center;
@@ -36,9 +38,12 @@
   font-weight: bold;
 }
 
+/* using this to style arrows on the site */
 .directional-query {
   filter: invert(100%);
 }
+
+/* making sure the positioning of the pagination arrows is different for all devices */
 @media only screen and (max-width: 480px) {
   .showPagination {
     bottom: 20vh !important;
