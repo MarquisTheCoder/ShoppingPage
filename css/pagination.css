@@ -3,7 +3,7 @@
 }
 
 .showPagination {
-  z-index: 6;
+  z-index: 4;
   display: flex !important;
   justify-content: center;
   width: 100vw;
