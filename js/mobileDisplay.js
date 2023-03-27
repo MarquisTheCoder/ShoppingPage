@@ -19,7 +19,6 @@ function hamburgerDisplay() {
   }
 }
 
-function autocomplete() {}
 function searchAndCartDisplay() {
   const isMobile = window.matchMedia("(max-width: 480px");
   if (isMobile.matches) {
