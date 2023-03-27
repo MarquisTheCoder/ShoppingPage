@@ -1,4 +1,3 @@
-
 <div align="center">
   
   <h1>
@@ -9,7 +8,7 @@
   <div>
     
     
-  Searchspring(this site note the company) is a functional mock shopping page with searching, cart addition and removal as well as randomly generated 
+  Searchspring(this site not the company) is a functional mock shopping page with searching, cart addition and removal as well as randomly generated 
   content for a unique experience after each load.
     
     
@@ -25,8 +24,8 @@
 </div>
 
 [![showcase image](https://github.com/MarquisTheCoder/searchspring-page/blob/main/imgs/examples/1.png)](https://github.com/MarquisTheCoder/searchspring-page/edit/main/README.md)
- <br>
- 
+<br>
+
  <div align="center">
   <h2>
     Modern Reactive Search
@@ -46,6 +45,7 @@
 </div>
 
 [![showcase image](https://github.com/MarquisTheCoder/searchspring-page/blob/main/imgs/examples/3.png)](https://github.com/MarquisTheCoder/searchspring-page/edit/main/README.md)
+
 <hr>
   
 </div>
