@@ -54,6 +54,7 @@ function loadSuggestedProducts() {
       });
     });
 }
+
 window.onload = () => {
   //on page load we will render random default page between 1 and 30
   loadResults(Math.floor(Math.random() * 30) + 1);
