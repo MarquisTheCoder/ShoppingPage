@@ -1,3 +1,4 @@
+
 //function to load results of any query and page
 //this will be very useful when utilizing our global state
 //manager later
@@ -21,7 +22,13 @@ function loadResults(page) {
         // document.getElementById("result-count-information").innerText = `${response.pagination.totalResults}`;
       }
 
-      //-----------------here is where we will add pagination to the global state --------------------------------
+      // here we are going to update the global paginated state
+      GlobalStateManager.update("currentPage", response.pagination.currentPage);
+      GlobalStateManager.update("totalPages", response.pagination.totalPages);
+      GlobalStateManager.update("totalResults", response.pagination.totalResults);
+      GlobalStateManager.update("start", response.pagination.begin);
+      GlobalStateManager.update("end", response.pagination.end);
+
       currentPage.innerText = page;
       return response.results;
     })
