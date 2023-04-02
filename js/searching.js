@@ -90,3 +90,13 @@ searchInput.addEventListener("input", function () {
   loadResults(1);
   loadSuggestedProducts();
 });
+
+searchInput.addEventListener("keypress", function (event) {
+
+  if(event.key === "Enter"){
+    modal.style.width = 0;
+    content.style.width = 0;
+    overlay.style["background-color"] = "#0000";
+
+  }
+});
