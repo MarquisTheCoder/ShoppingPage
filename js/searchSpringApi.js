@@ -1,4 +1,5 @@
 class SearchSpringAPI {
+  
   //because the site id can be changed in future implementations
   constructor(siteId = "scmq7n", resultsFormat = "native") {
     this.siteId = siteId;
@@ -17,6 +18,7 @@ class SearchSpringAPI {
     resultsPerPage = this.resultsPerPageDefault,
     filter = ""
   ) => {
+    // fetching the API results by current global query and appending necessary parameters
     let response = await fetch(
       `${GlobalStateManager.retrieve(
         "currentSearch"
@@ -24,8 +26,12 @@ class SearchSpringAPI {
       SearchSpringAPI.options
     );
 
+    // converting the response to json
     let json = response.json();
+
+    // putting the results into named variable
     let results = json;
+
     return results;
   };
 }

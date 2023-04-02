@@ -1,7 +1,5 @@
 
-
 // global variables
-const resultsManager = new ResultsManager();
 const spring = new SearchSpringAPI();
 
 //function to load results of any query and page
@@ -9,7 +7,8 @@ const spring = new SearchSpringAPI();
 //manager later
 function loadResults(page) {
 
-  resultsManager.resetResults();
+  ResultsManager.resetResults();
+
   let currentQuery = GlobalStateManager.retrieve("currentQuery");
 
   spring
@@ -39,7 +38,7 @@ function loadResults(page) {
       //adding each result to the main page while converting the json result to and html div
       .then((json) => {
         json.forEach((result) => {
-          resultsManager.addResult(resultsManager.toHtml(result));
+          ResultsManager.addResult(ResultsManager.toHtml(result));
         });
 
       })
@@ -71,7 +70,7 @@ function loadSuggestedProducts() {
       // adding each result to the suggested items 
       .then((json) => {
         json.forEach((result) => {
-          suggestedItems.innerHTML += resultsManager.toHtml(result);
+          suggestedItems.innerHTML += ResultsManager.toHtml(result);
         });
       });
 }

@@ -1,19 +1,19 @@
 class ResultsManager {
   //elements
-   mainResults = document.getElementById("main-results");
-   mainMsrp = document.getElementById("main-msrp");
+   static #mainResults = document.getElementById("main-results");
+   static #mainMsrp = document.getElementById("main-msrp");
 
   //result html manipulation
-  resetResults() {
-    this.mainResults.innerHTML = "";
+  static resetResults() {
+    ResultsManager.#mainResults.innerHTML = "";
   }
 
-  addResult(htmlElement) {
-    this.mainResults.innerHTML += htmlElement;
+  static addResult(htmlElement) {
+    ResultsManager.#mainResults.innerHTML += htmlElement;
   }
 
   // this function turns json object data from a query into and insertable html element
-  toHtml(result, sale = 0) {
+  static toHtml(result, sale = 0) {
     
     //parsing result data into individual variables
     let price = result.price;
@@ -27,12 +27,12 @@ class ResultsManager {
     }" data-product-url="${result.url}">
         <div class="product-image-container">
           ${
-            this.msrpChecker(result)
+            ResultsManager.msrpChecker(result)
               ? `<span class="price-difference" data-msrp="${result.msrp}" data-price="${result.price}">-${percentage}%</span>`
               : ""
           }
           ${
-            this.msrpChecker(result) && percentage >= 20
+            ResultsManager.msrpChecker(result) && percentage >= 20
               ? `<img class="product-sale-icon" src="imgs/main/sale.png" />`
               : ""
           }
@@ -49,7 +49,7 @@ class ResultsManager {
   }
 
   // simplifying checking whether a product is on sale or not 
-  msrpChecker(result) {
+  static msrpChecker(result) {
     return result.msrp > result.price;
   }
  

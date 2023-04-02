@@ -1,28 +1,38 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
   <head>
+
+    <!-- utility meta tags -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Searchspring #1 clothing store for string fashion around" />
+    <meta name=”robots” content="index, follow" />
 
-    <meta
-      name="description"
-      content="number on clothing store for string fashion around"
-    />
+    <!-- general SEO site meta tags -->
+    <meta property="og:title" content="Searchspring #1 clothing store for string fashion around" />
+    <meta property="og:url" content="https://marquisthecoder.github.io/searchspring-page/" />
+    <meta property="og:site_name" content="Searchspring" />
+    <meta property="article:tag" content="Shopping" />
+    <meta property="og:type" content="website" />
+
+    <!-- general SEO image meta tags -->
+    <meta property="og:image" content="https://github.com/MarquisTheCoder/searchspring-page/blob/main/imgs/examples/1.png" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="640" />
+
+    <!-- twitter SEO meta tags -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:image" content="https://github.com/MarquisTheCoder/searchspring-page/blob/main/imgs/examples/1.png" />
+    <meta property="twitter:site" content="@marquiscoder" />
 
     <!-- using the searchspring favicon I found by viewing network traffic in devtools -->
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="imgs/favicon.ico"
-    />
+    <link rel="icon" type="image/x-icon" href="imgs/favicon.ico" />
 
-    <!-- hotloaded css -->
     <!-- load an icon library to show a hamburger menu (bars) on small screens -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
     <!-- external css -->
     <link rel="stylesheet" href="css/generatedContent.css" />
@@ -39,34 +49,43 @@
     <!-- segmenting css by element for ease if targeting and expansion later -->
 
     <title>Searchspring - #1 one clothing store for spring outfits</title> 
-  <script>
+
+    <script>
+
+      //controlling page behavior based on scroll position
       window.onscroll = function () {
-      const navbar = document.getElementsByClassName('main-navigation')[0];
-      const pagination = document.getElementsByClassName('pagination-container')[0];
 
-    if (document.documentElement.scrollTop >= 3) {
-        navbar.classList.add("scrolled"); 
-    } 
-    else {
-        navbar.classList.remove("scrolled");
-    }
+        // grabbing navbar and pagination modal elements from the webpage
+        const navbar = document.getElementsByClassName('main-navigation')[0];
+        const pagination = document.getElementsByClassName('pagination-container')[0];
 
-    if (document.documentElement.scrollTop >= 340) {
-        pagination.classList.add("showPagination");
-    }else{
-        pagination.classList.remove("showPagination");
-    }
+        //changing navbar positional bahavior based on scroll position
+        if (document.documentElement.scrollTop >= 3) {
+            navbar.classList.add("scrolled"); 
+        } 
+        else {
+            navbar.classList.remove("scrolled");
+        }
+        
+        // changing pagination modal visibility based on scroll position
+        if (document.documentElement.scrollTop >= 340) {
+            pagination.classList.add("showPagination");
+        }else{
+            pagination.classList.remove("showPagination");
+        }
+      };
 
-};
-    </script>
+      </script>
   
   </head>
+
   <body>
+    <!-- react like thinking by basing all behavior on global root container that holds state -->
     <div class="root">
+
       <header>
+
         <nav class="main-navigation">
-          <!-- seperating each section into individual divs so they are 
-            easy to maintain with justify content space-between -->
 
           <!-- main naviagtion menu -->
           <div class="main-menu" id="main-menu">
@@ -81,7 +100,6 @@
           >
             <i class="fa fa-bars"></i>
           </a>
-
           
           <div class="searchspring">
             <a href="./index.html">
@@ -92,6 +110,7 @@
               />
             </a>
           </div>
+
           <div class="search-and-cart">
             <button class="search-and-cart-button" id="search">
               <img
@@ -116,22 +135,30 @@
             </button>
             
             <section id="search-and-cart-modal">
+              <!-- overlay is for bluring and shading out products when open -->
               <div class="overlay"> 
+
+                <!-- content is a container that will hold both the cart and search page -->
                   <div class="content">
+
                     <!-- flip will be used to switch from cart to search seamlessly -->
                       <div class="flip">
                         <div class="flip-search flip-item">
+
                           <section #search-area>
-                       
+
+                           <!-- seperating the search area by top and bottoms for easy divide -->
                             <div class="top">
 
+                                 <!-- container to hold search related icons and elements -->
                                   <div class="search-items">
                                     <img id="search-back-button" class="navigation-icon" src="imgs/main/leftArrow.svg" alt="">
                                     <input id="search-input" type="text" placeholder="shoes, dresses, tops, etc...">
                                     <img class="navigation-icon" src="imgs/header/search-icon.svg" alt="">
                                     <img class="navigation-icon" src="imgs/header/cart-icon.svg" alt="" onclick="CartManager.flipTo('cart')">
                                   </div>
-
+                                  
+                                  <!-- container to hold generated autocomplete responses -->
                                   <div id="search-autocomplete-area">
                                     <div div class="suggestion-filter">
                                       <div id="user-query"> </div>
@@ -143,34 +170,33 @@
 
                             <div class="middle">
 
+                              <!-- current filters will hold all selected filters so users will know what theyve selected -->
                               <div id="current-filters"></div>
+
+                              <!-- holds all box filters that can be responsively clicked and added to the query -->
                               <div id="filters">
+
+                                <!-- filter sets seperate the types of filters -->
                                 <div class="filter-set">
                                   <h2>Colors</h2>
-                                  <div class="filter-items" id="filter-item-colors">
-
-                                  </div>
+                                  <div class="filter-items" id="filter-item-colors"></div>
                                 </div>
     
                                 <div class="filter-set">
-
                                   <h2>Pricing</h2>
-                                  <div class="filter-items"  id="filter-item-prices">
-                                    
-                                  </div>
+                                  <div class="filter-items"  id="filter-item-prices"></div>
                                 </div>
 
                                 <div class="filter-set">
                                   <h2>Size</h2>
-                                  <div class="filter-items" id="filter-item-sizes">
-                                  
-                                  </div>
+                                  <div class="filter-items" id="filter-item-sizes"></div>
                                 </div>
 
                               </div>
                             </div>
 
                           </section>
+
                         </div>
                         <div class="flip-cart flip-item flipped">
                           <section id="cart-area">
@@ -232,8 +258,7 @@
               </div>
             </div>
 
-            <div class="banner-item" 
-            onclick="GlobalStateManager.update('currentQuery', 'jeans'); loadResults(1)">
+            <div class="banner-item" onclick="GlobalStateManager.update('currentQuery', 'jeans'); loadResults(1)">
               <div class="container">
                 <div class="category-image-container">
                   <img
@@ -249,8 +274,7 @@
               </div>
             </div>
 
-            <div class="banner-item" 
-            onclick="GlobalStateManager.update('currentQuery', 'dresses'); loadResults(1)">
+            <div class="banner-item" onclick="GlobalStateManager.update('currentQuery', 'dresses'); loadResults(1)">
               <div class="container">
                 <div class="category-image-container">
                   <img
@@ -266,7 +290,7 @@
             </div>
 
             <div class="banner-item" 
-            onclick="GlobalStateManager.update('currentQuery', 'shoes'); loadResults(1)">
+            onclick = "GlobalStateManager.update('currentQuery', 'shoes'); loadResults(1)">
               <div class="container">
                 <div class="category-image-container">
                   <img
@@ -281,8 +305,7 @@
               </div>
             </div>
             
-            <div class="banner-item"
-             onclick="GlobalStateManager.update('currentQuery', 'other'); loadResults(1)">
+            <div class="banner-item" onclick="GlobalStateManager.update('currentQuery', 'other'); loadResults(1)">
               <div class="container">
                 <div class="category-image-container">
                   <img
@@ -291,9 +314,11 @@
                     alt=""
                   />
                 </div>
+
                 <div class="category-name-container">
                   <h1>Other</h1>
                 </div>
+
               </div>
             </div>
           </div>
@@ -302,7 +327,6 @@
 
 
       <main>
-
         <section class="ad-footer">
 
             <!-- TODO: need to add benefits here 
@@ -359,7 +383,7 @@
         </section>
     </div>
 
-    <!-- external javascript -->
+    <!-- breaking down global functionaly by container and purpose -->
     <script src="js/globalStateManager.js"></script>
     <script src="js/searchSpringApi.js"></script>
     <script src="js/pagination.js"></script>
