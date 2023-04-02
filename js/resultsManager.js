@@ -1,22 +1,26 @@
 class ResultsManager {
   //elements
-  element = document.getElementById("main-results");
-  msrpElement = document.getElementById("main-msrp");
+   mainResults = document.getElementById("main-results");
+   mainMsrp = document.getElementById("main-msrp");
 
   //result html manipulation
   resetResults() {
-    this.element.innerHTML = "";
+    this.mainResults.innerHTML = "";
   }
 
   addResult(htmlElement) {
-    this.element.innerHTML += htmlElement;
+    this.mainResults.innerHTML += htmlElement;
   }
 
+  // this function turns json object data from a query into and insertable html element
   toHtml(result, sale = 0) {
+    
+    //parsing result data into individual variables
     let price = result.price;
     let msrp = result.msrp;
     let percentage = (100 - (price / msrp) * 100).toFixed(0);
-
+    
+    // formaulating the html element to be used later
     return ` 
       <div class="product" id=${result.id} data-id="${result.id}" data-name="${
       result.name
@@ -44,32 +48,9 @@ class ResultsManager {
       </div>`;
   }
 
-  //data extraction methods
-
-  //dont want to have to think about this later
-  //so i'm making sure the I can compare MSRP and PRICE
-  //easily
+  // simplifying checking whether a product is on sale or not 
   msrpChecker(result) {
     return result.msrp > result.price;
   }
-  paginationData(result) {
-    return {
-      total: result.pagination.totalResults,
-      start: result.pagination.begin,
-      finish: result.pagination.totalPages,
-      current: result.pagination.currentPage,
-    };
-  }
-  getName(result) {
-    return result.name;
-  }
-  getPrice(result) {
-    return result.price;
-  }
-  getImage(result) {
-    return result.imageUrl;
-  }
-  getDescription(result) {
-    return result.description;
-  }
+ 
 }
