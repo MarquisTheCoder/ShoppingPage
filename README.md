@@ -2,14 +2,13 @@
   
   <h1>
     <a href="https://marquisthecoder.github.io/searchspring-page/">
-    SearchSpring Application Project
+    Shopping Application Project
     </a>
   </h1>
   <div>
     
     
-  Searchspring(this site not the company) is a functional mock shopping page with searching, cart addition and removal as well as randomly generated 
-  content for a unique experience after each load.
+  Functional Mock Shopping Application
     
     
   </div>
